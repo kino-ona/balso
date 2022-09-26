@@ -1,0 +1,37 @@
+@use 'fonts';
+@use 'reset';
+@use 'buttons';
+@use 'typographys';
+@use 'forms';
+@use 'components';
+@use 'swiper';
+@use 'header';
+// @use 'nav';
+@use 'contents';
+// @use 'challenge';
+
+// special challenge
+.special-challenge {
+	$self: &;
+	&__intro {
+		#{$self}__top {
+			.title {
+				margin-bottom: 0.6875em;
+				
+				span {
+					vertical-align: middle;
+				}
+			}
+		}
+	}
+	&__promo {
+		// margin-top: 7.1875rem;
+		text-align: center;
+	}
+
+	.button {
+		&:not(:first-child) {
+			margin-top: 1.25rem;
+		}
+	}
+}

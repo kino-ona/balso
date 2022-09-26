@@ -1,0 +1,216 @@
+@use 'sass:math';
+
+// transform
+@mixin transform($transforms) {
+	transform: $transforms;
+}
+@mixin rotate($deg) {// Rotate
+	@include transform(rotate(#{$deg}deg));
+}
+@mixin scale($scale) {// Scale
+	@include transform(scale($scale));
+}
+@mixin translate ($x, $y) {// Translate
+	@include transform(translate($x, $y));
+}
+@mixin pushEasing($speed) {
+	transition-duration: #{$speed}ms;
+	transition-timing-function: cubic-bezier(0.5, 0, 0.1, 1);
+	transition-delay: 0ms;
+}
+@mixin transition($sec, $motion) {
+	transition: $sec $motion;
+}
+
+// clear floating
+@mixin clearer {
+	content: "";
+	display: block;
+	clear: both;
+}
+
+// ellipse
+@mixin ellipse($line) {
+	@if ($line > 1) {
+		white-space:normal;
+		word-wrap:break-word;
+		display:-webkit-box;
+		-webkit-line-clamp:$line;
+		-webkit-box-orient:vertical;
+	} @else {
+		white-space:normal;
+		word-wrap:break-word;
+		display:-webkit-box;
+		-webkit-line-clamp:$line;
+		-webkit-box-orient:vertical;
+	}
+	overflow:hidden;
+	text-overflow:ellipsis;
+}
+
+// icons
+// Mixin Icons via http://wit.nts-corp.com/2017/10/31/4972
+$sqrt_2: 1.41421356237;
+// bullet icon SCSS mixin
+@mixin iconAngle($direction: 'up', $width: 50px, $height: 25px, $thick: 1px, $color: #fff, $display: inline-block, $position: relative){
+	position: $position;
+	display: $display;
+	width: $width;
+	height: $height;
+	overflow: hidden;
+
+	@if ($direction == 'up' or $direction == 'down') {
+		$size: floor(math.div($width, $sqrt_2) - 2*$thick);
+		$rate: math.div(2*$height, $width);
+		$margin-top : round(math.div($rate*$size, 2*$sqrt_2));
+
+		&:before {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: $size;
+			height: $size;
+			@if ($rate == 1) {
+				@include transform(translate(-50%, -50%) rotate(45deg));
+			} @else {
+				@include transform(translate(-50%, -50%) scale(1, $rate) rotate(45deg));
+			}
+
+			@if ($direction == 'up') {
+				margin-top: $margin-top;
+				border-top: $thick solid $color;
+				border-left: $thick solid $color;
+				border-right: 0;
+				border-bottom: 0;
+			} @else if ($direction == 'down') {
+				margin-top: - $margin-top;
+				border-right: $thick solid $color;
+				border-bottom: $thick solid $color;
+			}
+		}
+	}  @else if ($direction == 'left' or $direction == 'right') {
+		$size: floor(math.div($height, $sqrt_2) - 2*$thick);
+		$rate: math.div(2*$width, $height);
+		$margin-left : round(math.div($rate*$size, 2*$sqrt_2));
+
+		&:before {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			width: $size;
+			height: $size;
+
+			@if ($rate == 1) {
+				@include transform(translate(-50%, -50%) rotate(45deg));
+			} @else {
+				@include transform(translate(-50%, -50%) scale($rate, 1) rotate(45deg));
+			}
+
+			@if ($direction == 'left') {
+				margin-left: $margin-left;
+				border-left: $thick solid $color;
+				border-bottom: $thick solid $color;
+			}  @else if ($direction == 'right') {
+				margin-left: - $margin-left;
+				border-top: $thick solid $color;
+				border-right: $thick solid $color;
+			}
+		}
+	}
+}
+// arrow icon SCSS mixin
+@mixin iconArrow($direction: 'up', $width: 50px, $height: 50px, $thick: 2px, $color: #222, $display: inline-block, $position: relative){
+	position: $position;
+	display: $display;
+	width: $width;
+	height: $height;
+		
+		&:before {
+		content: '';
+		position: absolute;
+				border-top: $thick solid $color;
+				border-left: $thick solid $color;
+		
+				@if ($direction == 'up' or $direction == 'down') {
+				$size: round(math.div($width, $sqrt_2) - $thick);
+						left: 50%;
+						width: $size;
+						height: $size;
+
+						@if ($direction == 'up') {
+								top: round($width*0.5);
+								transform: translate(-50%, -50%) rotate(45deg);
+						} @else if ($direction == 'down') {
+								bottom: round($width*0.5);
+								transform: translate(-50%, 50%) rotate(-135deg);
+						}
+				} @else if ($direction == 'left' or $direction == 'right') {
+						$size: round(math.div($height, $sqrt_2) - $thick);
+						top: 50%;
+						width: $size;
+						height: $size;
+
+						@if ($direction == 'left') {
+								left: round($height*0.5);
+								transform: translate(-50%, -50%) rotate(-45deg);
+						} @else if ($direction == 'right') {
+								right: round($height*0.5);
+								transform: translate(50%, -50%) rotate(135deg);
+						}
+				}
+		}
+	
+		&:after {
+				content: '';
+				position: absolute;
+				background-color: $color;
+
+				@if ($direction == 'up' or $direction == 'down') {
+
+						@if ($direction == 'up') {
+								top: round(math.div($thick, $sqrt_2));
+						} @else if ($direction == 'down') {
+								bottom: round(math.div($thick, $sqrt_2));
+						}
+
+						left: 50%;
+						width: $thick;
+						height: $height - round(math.div($thick, $sqrt_2));
+						transform: translate(-50%, 0);
+
+				} @else if ($direction == 'left' or $direction == 'right') {
+						top: 50%;
+
+						@if ($direction == 'left') {
+								left: round(math.div($thick, $sqrt_2));
+						} @else if ($direction == 'right') {
+								right: round(math.div($thick, $sqrt_2));
+						}
+
+						width: $width - round(math.div($thick, $sqrt_2));
+						height: $thick;
+						transform: translate(0, -50%);
+				}
+		}
+}
+
+// gradient bg
+@mixin dimm-gradient($direction, $rotate, $start:rgba(0, 0, 0, 1), $end:rgba(0, 0, 0, 0)) {
+	@if $direction==top and $rotate==null {
+		background-image: linear-gradient(to bottom, $start, $end);
+	}
+	@else if $direction==bottom and $rotate==null {
+		background-image: linear-gradient(to top, $start, $end);
+	}
+	@else if $direction==left and $rotate==null {
+		background-image: linear-gradient(to right, $start, $end);
+	}
+	@else if $direction==right and $rotate==null {
+		background-image: linear-gradient(to left, $start, $end);
+	}
+	@else if $direction==null and $rotate {
+		background-image: linear-gradient((#{$rotate}deg), $start, $end);
+	}
+}
