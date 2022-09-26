@@ -7,11 +7,11 @@
 	display: flex;
 	flex-direction: column;
 	row-gap: 2.5rem;
-	padding: 5.25rem 0 calc(constant(safe-area-inset-bottom) + 2.5em);
-	padding: 5.25rem 0 calc(env(safe-area-inset-bottom) + 2.5em);
+	padding: 8.4rem 0 calc(constant(safe-area-inset-bottom) + 4rem);
+	padding: 8.4rem 0 calc(env(safe-area-inset-bottom) + 4rem);
 	&__separate {
-		padding: 0 calc(constant(safe-area-inset-right) + 1.5rem) 0 calc(constant(safe-area-inset-left) + 1.5rem);
-		padding: 0 calc(env(safe-area-inset-right) + 1.5rem) 0 calc(env(safe-area-inset-left) + 1.5rem);
+		padding: 0 calc(constant(safe-area-inset-right) + 2.4rem) 0 calc(constant(safe-area-inset-left) + 2.4rem);
+		padding: 0 calc(env(safe-area-inset-right) + 2.4rem) 0 calc(env(safe-area-inset-left) + 2.4rem);
 
 		> .button {
 			&:not(:first-child) {
@@ -20,28 +20,28 @@
 		}
 	}
 	&__card {
-		padding: 2rem 1.5rem;
-		border-radius: 1.25rem;
+		padding: 3.2rem 2.4rem;
+		border-radius: 2rem;
 		background-color: #fff;
 		&:not(:first-child) {
-			margin-top: 1.25rem;
+			margin-top: 2rem;
 		}
 		#{$self}__group {
 			&:not(:first-child) {
-				margin-top: 2.5rem;
+				margin-top: 4rem;
 			}
 		}
 
 		> .flag {
 			&:first-child {
-				margin-bottom: 0.75rem;
+				margin-bottom: 1.2rem;
 			}
 		}
 	}
 	&__round {
-		padding: 1.25em calc(constant(safe-area-inset-right) + 1.5rem) 1.25em calc(constant(safe-area-inset-left) + 1.5rem);
-		padding: 1.25em calc(env(safe-area-inset-right) + 1.5rem) 1.25em calc(env(safe-area-inset-left) + 1.5rem);
-		border-radius: 2.5rem 2.5rem 0 0;
+		padding: 4rem calc(constant(safe-area-inset-right) + 2.4rem) 4rem calc(constant(safe-area-inset-left) + 2.4rem);
+		padding: 4rem calc(env(safe-area-inset-right) + 2.4rem) 4rem calc(env(safe-area-inset-left) + 2.4rem);
+		border-radius: 3.6rem 3.6rem 0 0;
 	}
 	// &__bottom {
 	// 	margin-top: auto;
@@ -49,8 +49,8 @@
 	// 	background-color: variables.$secondary-color;
 	// }
 	// &__overlap {
-	// 	padding: 1.25em calc(constant(safe-area-inset-right) + 1.5rem) 1.25em calc(constant(safe-area-inset-left) + 1.5rem);
-	// 	padding: 1.25em calc(env(safe-area-inset-right) + 1.5rem) 1.25em calc(env(safe-area-inset-left) + 1.5rem);
+	// 	padding: 1.25em calc(constant(safe-area-inset-right) + 2.4rem) 1.25em calc(constant(safe-area-inset-left) + 2.4rem);
+	// 	padding: 1.25em calc(env(safe-area-inset-right) + 2.4rem) 1.25em calc(env(safe-area-inset-left) + 2.4rem);
 	// 	border-radius: 2.5rem 2.5rem 0 0;
 	// 	&:last-child {
 	// 		padding-bottom: calc(constant(safe-area-inset-bottom) + 7rem);

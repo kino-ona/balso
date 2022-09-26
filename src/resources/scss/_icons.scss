@@ -1,0 +1,7 @@
+@use 'sprite/sprite';
+
+.ico {
+	&--arrow-right {
+		@include sprite.retina-sprite(sprite.$ico-arrow-right-group, sprite.$ico-arrow-right-group-3x);
+	}
+}

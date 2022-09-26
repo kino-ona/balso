@@ -3,19 +3,16 @@
 
 .form {
 	$self: &;
-	&__set {
-
-	}
 	&__head {
 		display: flex;
 		&:not(:last-child) {
-			margin-bottom: 0.75rem;
+			margin-bottom: 1.2rem;
 		}
 	}
 	&__label {
-		color: #8D94A0;
-		font-size: 0.875rem;
-		line-height: 1.375rem;
+		color: variables.$form-label;
+		font-size: 1.4rem;
+		line-height: 2.2rem;
 	}
 	&__field {
 		display: flex;
@@ -27,7 +24,7 @@
 	&__ico {
 		position: absolute;
 		right: 0;
-		top: 0.1875rem;
+		top: 0.3rem;
 		&--check {
 			@include sprite.retina-sprite(sprite.$ico-check-group, sprite.$ico-check-group-3x);
 		}
@@ -36,10 +33,10 @@
 		}
 	}
 	&__msg {
-		font-size: 0.875rem;
-		line-height: 1.25rem;
+		font-size: 1.4rem;
+		line-height: 2rem;
 		&:not(:first-child) {
-			margin-top: 0.5rem;
+			margin-top: 0.8rem;
 		}
 		&--check {
 			color: variables.$primary-color;

@@ -18,7 +18,7 @@
 	display: flex;
 	align-items: center;
 	&:not(:last-child) {
-		margin-bottom: 1.25rem;
+		margin-bottom: 2rem;
 	}
 }
 
@@ -27,23 +27,22 @@
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	height: 1.5rem;
-	padding: 0 0.5rem;
-	border-radius: 0.75rem;
-	background-color: variables.$primary-color;
-	color: #fff;
+	height: 2.4rem;
+	padding: 0 0.8rem;
+	border-radius: 1.2rem;
+	background-color: variables.$secondary-color;
+	color: variables.$primary-color;
 	font-weight: 600;
-	font-size: 0.75rem;
-	line-height: 1.125rem;
+	font-size: 1.2rem;
+	line-height: 1.8rem;
 	&--secondary {
-		background-color: #000;
-		font-weight: 400;
+		background-color: variables.$quaternary-color;
 	}
 	&--new {
-		height: 1rem;
-		padding: 0 0.3125rem;
+		height: 1.6rem;
+		padding: 0 0.5rem;
 		font-weight: 700;
-		font-size: 0.5rem;
+		font-size: 0.8rem;
 	}
 }
 
@@ -52,25 +51,25 @@
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	gap: 0.25rem;
-	vertical-align: middle;
+	gap: 0.4rem;
 	&__mark {
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
-		width: 1rem;
-		height: 1rem;
+		width: 1.6rem;
+		height: 1.6rem;
 		border-radius: 50%;
 		background-color: #FFD460;
 		color: #CE7700;
 		font-weight: 900;
-		font-size: 0.625rem;
+		font-size: 1rem;
+		line-height: 2.2rem;
 		text-align: center;
 	}
 	&__number {
 		font-weight: 900;
-		font-size: 1rem;
-		line-height: 1.5rem;
+		font-size: 1.6rem;
+		line-height: 2.4rem;
 	}
 }
 
@@ -78,7 +77,6 @@
 .coin {
 	display: inline-flex;
 	position: relative;
-	filter: drop-shadow(0.25rem 0.5rem 1.25rem rgba(0,0,0,.16));
 	@include sprite.retina-sprite(sprite.$ico-coin-group, sprite.$ico-coin-group-3x);
 }
 
@@ -86,16 +84,16 @@
 .overlap {
 	&__row {
 		display: flex;
-		gap: 0.5rem;
+		gap: 0.8rem;
 		overflow-x: auto;
-		margin: 0 -1.5rem;
-		padding: 0 1.5rem;
+		margin: 0 -2.4rem;
+		padding: 0 2.4rem;
 	}
 	&__item {
 		flex: 0 0 100%;
 	}
 	&__figure {
-		clip-path: inset(0 round 1.25rem);
+		clip-path: inset(0 round 2rem);
 
 		img {
 			width: 100%;
@@ -108,18 +106,18 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	height: 11.875rem;
-	border: 0.0625rem dashed #D7D7E0;
-	border-radius: 1.25rem;
+	height: 19rem;
+	border: 0.1rem dashed #D7D7E0;
+	border-radius: 2rem;
 	&__file {
 		display: flex;
 		flex-direction: column;
-		gap: 0.75rem;
+		gap: 1.2rem;
 	}
 	&__ico {
 		position: relative;
-		width: 2rem;
-		height: 2rem;
+		width: 3.2rem;
+		height: 3.2rem;
 		margin: 0 auto;
 		border-radius: 50%;
 		background-color: variables.$primary-color;
@@ -134,21 +132,21 @@
 			background-color: #fff;
 		}
 		&:before {
-			width: 0.125rem;
-			height: 1rem;
-			margin-left: -0.0625rem;
-			margin-top: -0.5rem;
+			width: 0.2rem;
+			height: 1.6rem;
+			margin-left: -0.1rem;
+			margin-top: -0.8rem;
 		}
 		&:after {
-			width: 1rem;
-			height: 0.125rem;
-			margin-left: -0.5rem;
-			margin-top: -0.0625rem;
+			width: 1.6rem;
+			height: 0.2rem;
+			margin-left: -0.8rem;
+			margin-top: -0.1rem;
 		}
 	}
 	&__text {
-		color: #8D94A0;
-		font-size: 0.875rem;
-		line-height: 1rem;
+		color: #9294A0;
+		font-size: 1.4rem;
+		line-height: 1.6rem;
 	}
 }

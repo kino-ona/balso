@@ -23,6 +23,8 @@
 	word-break: break-word;
 	tab-size: 4;
 	font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", Pretendard, Roboto, "Noto Sans KR", "Segoe UI", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+	font-weight: 400;
+	font-size: 10px;
 }
 
 ol,
@@ -71,40 +73,28 @@ input[type='email'] {
 	appearance: none;
 	position: relative;
 	width: 100%;
-	padding: 0 0 0.5rem 0;
+	padding: 0 0 0.8rem 0;
 	border: 0;
-	border-bottom: 0.0625rem solid variables.$primary-color;
+	border-bottom: 0.1rem solid variables.$stroke;
 	border-radius: 0;
 	background-color: transparent;
 	font-weight: 600;
-	font-size: 1.125rem;
-	line-height: 1.5rem;
+	font-size: 1.8rem;
+	line-height: 2.4rem;
 	outline: none;
-	// &:not([readonly]):not([disabled]):not([aria-invalid='true']) {
-	// 	&:focus {
-	// 		border-color: #5eecfa;
-	// 		background-color: #fff;
-	// 	}
-	// }
-	// &[disabled] {
-	// 	background-color: #F7F7F7;
-	// 	color: #999;
-	// }
-	// &[readonly] {
-	// 	background-color: #F7F7F7;
-	// 	color: #999;
-	// }
+	&:not([readonly]):not([disabled]):not([aria-invalid='true']) {
+		&:focus {
+			border-color: variables.$primary-color;
+		}
+	}
 	&[aria-invalid='true'] {
 		border-bottom-color: variables.$form-error;
 	}
 	&::-webkit-input-placeholder {
-		color: variables.$tertiary-color;
+		color: #CCCCD1;
 	}
 	&::-moz-placeholder {
-		color: variables.$tertiary-color;
-	}
-	&::-ms-reveal {
-		color: variables.$tertiary-color;
+		color: #CCCCD1;
 	}
 }
 
@@ -119,6 +109,6 @@ table {
 
 body {
 	// min-height: calc(var(--vh, 1vh) * 100);
-	background-color: #F4F4F8;
-  // touch-action: pan-x pan-y;
+	background-color: variables.$quaternary-color;
+  touch-action: pan-x pan-y;
 }

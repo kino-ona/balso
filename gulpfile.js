@@ -228,7 +228,7 @@ function server(done) {
 		browsersync.init({
 			server: {
 				baseDir: 'dist',
-				index: 'index.html'
+				index: '_work_sheet.html'
 			},
 			open: false
 		})

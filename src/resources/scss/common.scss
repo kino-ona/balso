@@ -3,6 +3,7 @@
 @use 'buttons';
 @use 'typographys';
 @use 'forms';
+@use 'icons';
 @use 'components';
 @use 'swiper';
 @use 'header';
@@ -16,7 +17,7 @@
 	&__intro {
 		#{$self}__top {
 			.title {
-				margin-bottom: 0.6875em;
+				margin-bottom: 2.1rem;
 				
 				span {
 					vertical-align: middle;
@@ -26,7 +27,10 @@
 	}
 	&__promo {
 		// margin-top: 7.1875rem;
-		text-align: center;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.4rem;
 	}
 
 	.button {

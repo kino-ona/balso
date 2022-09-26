@@ -6,9 +6,9 @@
 	$self: &;
 	&__row {
 		display: flex;
-		column-gap: 0.75em;
+		column-gap: 1rem;
 		&:not(:first-child) {
-			margin-top: 0.75rem;
+			margin-top: 0.8rem;
 		}
 	}
 	&__item {
@@ -16,13 +16,13 @@
 		align-items: center;
 		justify-content: center;
 		flex: 1;
-		height: 4rem;
-		border-radius: 1.25rem;
+		height: 6.4rem;
+		border-radius: 2rem;
 		background-color: variables.$primary-color;
 		color: #fff;
 		font-weight: 700;
-		font-size: 1rem;
-		line-height: 1.5rem;
+		font-size: 1.6rem;
+		line-height: 2.4rem;
 		&--secondary {
 			background-color: #000;
 		}
@@ -30,27 +30,21 @@
 			background-color: #CCCCD1;
 		}
 		&--auto {
-			flex: 0 0 4rem;
+			flex: 0 0 6.4rem;
 		}
 		&--mix {
 			display: grid;
-			grid-template-columns: 46px 1fr 16px;
+			grid-template-columns: 4.6rem 1fr auto;
 			justify-content: flex-start;
-			gap: 1.25rem;
-			padding: 0 1.25rem;
-			background-color: #F4F4F8;
+			gap: 2rem;
+			padding: 0 2.4rem;
+			background-color: variables.$quaternary-color;
 			color: #000;
 			font-weight: 400;
 			#{$self}__img {
 				flex: none;
-				width: 2.875rem;
-				height: 2.875rem;
-			}
-			#{$self}__arrow {
-				flex: none;
-				&--right {
-					@include sprite.retina-sprite(sprite.$ico-arrow-right-group, sprite.$ico-arrow-right-group-3x);
-				}
+				width: 4.6rem;
+				height: 4.6rem;
 			}
 		}
 	}
