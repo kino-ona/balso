@@ -1,0 +1,124 @@
+@use 'variables';
+
+* {
+	margin: 0;
+	padding: 0;
+	font: inherit;
+	color: inherit;
+}
+
+*,
+:after,
+:before {
+	box-sizing: border-box;
+}
+
+:root {
+	-webkit-tap-highlight-color: transparent;
+	-webkit-text-size-adjust: 100%;
+	text-size-adjust: 100%;
+	cursor: default;
+	line-height: 1.5;
+	overflow-wrap: break-word;
+	word-break: break-word;
+	tab-size: 4;
+	font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", Pretendard, Roboto, "Noto Sans KR", "Segoe UI", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
+}
+
+ol,
+ul {
+	list-style: none
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+	display: block;
+	max-width: 100%;
+}
+
+fieldset,
+img,
+textarea,
+iframe {
+	border: 0;
+}
+
+button {
+	appearance: none;
+	background: none;
+	border: 0;
+	cursor: pointer;
+}
+
+input,
+button,
+select {
+	vertical-align: middle;
+}
+
+label {
+	cursor: pointer;
+}
+
+input[type='text'],
+input[type='password'],
+input[type='number'],
+input[type='tel'],
+input[type='email'] {
+	appearance: none;
+	position: relative;
+	width: 100%;
+	padding: 0 0 0.5rem 0;
+	border: 0;
+	border-bottom: 0.0625rem solid variables.$primary-color;
+	border-radius: 0;
+	background-color: transparent;
+	font-weight: 600;
+	font-size: 1.125rem;
+	line-height: 1.5rem;
+	outline: none;
+	// &:not([readonly]):not([disabled]):not([aria-invalid='true']) {
+	// 	&:focus {
+	// 		border-color: #5eecfa;
+	// 		background-color: #fff;
+	// 	}
+	// }
+	// &[disabled] {
+	// 	background-color: #F7F7F7;
+	// 	color: #999;
+	// }
+	// &[readonly] {
+	// 	background-color: #F7F7F7;
+	// 	color: #999;
+	// }
+	&[aria-invalid='true'] {
+		border-bottom-color: variables.$form-error;
+	}
+	&::-webkit-input-placeholder {
+		color: variables.$tertiary-color;
+	}
+	&::-moz-placeholder {
+		color: variables.$tertiary-color;
+	}
+	&::-ms-reveal {
+		color: variables.$tertiary-color;
+	}
+}
+
+a {
+	text-decoration: none;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+body {
+	// min-height: calc(var(--vh, 1vh) * 100);
+	background-color: #F4F4F8;
+  // touch-action: pan-x pan-y;
+}

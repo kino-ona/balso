@@ -1,0 +1,26 @@
+/*
+Copyright (c) 2021 Kil Hyung-jin, with Reserved Font Name Pretendard.
+https://github.com/orioncactus/pretendard
+
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+This license is copied below, and is also available with a FAQ at:
+http://scripts.sil.org/OFL
+*/
+
+// 100 Thin
+// 200 ExtraLight
+// 300 Light
+// 400 Regular
+// 500 Medium
+// 600 SemiBold
+// 700 Bold
+// 800 ExtraBold
+// 900 Black
+
+@font-face {
+	font-family: 'Pretendard Variable';
+	font-weight: 45 920;
+	font-style: normal;
+	font-display: swap;
+	src: local('Pretendard Variable'), url('../fonts/PretendardVariable.woff2') format('woff2-variations');
+}

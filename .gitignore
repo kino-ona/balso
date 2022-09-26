@@ -4,3 +4,4 @@ dist/html
 dist/resources/images
 dist/resources/css
 dist/resources/js
+src/resources/scss/sprite

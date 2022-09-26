@@ -1,0 +1,57 @@
+@use 'variables';
+@use 'sprite/sprite';
+
+// button
+.button {
+	$self: &;
+	&__row {
+		display: flex;
+		column-gap: 0.75em;
+		&:not(:first-child) {
+			margin-top: 0.75rem;
+		}
+	}
+	&__item {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		flex: 1;
+		height: 4rem;
+		border-radius: 1.25rem;
+		background-color: variables.$primary-color;
+		color: #fff;
+		font-weight: 700;
+		font-size: 1rem;
+		line-height: 1.5rem;
+		&--secondary {
+			background-color: #000;
+		}
+		&--tertiary {
+			background-color: #CCCCD1;
+		}
+		&--auto {
+			flex: 0 0 4rem;
+		}
+		&--mix {
+			display: grid;
+			grid-template-columns: 46px 1fr 16px;
+			justify-content: flex-start;
+			gap: 1.25rem;
+			padding: 0 1.25rem;
+			background-color: #F4F4F8;
+			color: #000;
+			font-weight: 400;
+			#{$self}__img {
+				flex: none;
+				width: 2.875rem;
+				height: 2.875rem;
+			}
+			#{$self}__arrow {
+				flex: none;
+				&--right {
+					@include sprite.retina-sprite(sprite.$ico-arrow-right-group, sprite.$ico-arrow-right-group-3x);
+				}
+			}
+		}
+	}
+}
