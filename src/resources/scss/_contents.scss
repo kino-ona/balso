@@ -4,9 +4,6 @@
 // contents
 .contents {
 	$self: &;
-	display: flex;
-	flex-direction: column;
-	row-gap: 2.5rem;
 	padding: 8.4rem 0 calc(constant(safe-area-inset-bottom) + 4rem);
 	padding: 8.4rem 0 calc(env(safe-area-inset-bottom) + 4rem);
 	&__separate {
@@ -15,7 +12,7 @@
 
 		> .button {
 			&:not(:first-child) {
-				margin-top: 1.75rem;
+				margin-top: 2.8rem;
 			}
 		}
 	}

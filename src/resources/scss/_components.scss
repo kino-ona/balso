@@ -106,9 +106,23 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	position: relative;
 	height: 19rem;
 	border: 0.1rem dashed #D7D7E0;
 	border-radius: 2rem;
+	&__preview {
+		position: absolute;
+		left: -0.1rem;
+		top: -0.1rem;
+		right: -0.1rem;
+		bottom: -0.1rem;
+		clip-path: inset(0 round 2rem);
+
+		img {
+			width: 100%;
+			height: 100%;
+		}
+	}
 	&__file {
 		display: flex;
 		flex-direction: column;

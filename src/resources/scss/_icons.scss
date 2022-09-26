@@ -4,4 +4,7 @@
 	&--arrow-right {
 		@include sprite.retina-sprite(sprite.$ico-arrow-right-group, sprite.$ico-arrow-right-group-3x);
 	}
+	&--arrow-down {
+		@include sprite.retina-sprite(sprite.$ico-arrow-down-group, sprite.$ico-arrow-down-group-3x);
+	}
 }

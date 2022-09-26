@@ -188,7 +188,7 @@ function sprite(done) {
       imgPath: '../images/sprite/sprite.png',
       retinaImgPath: '../images/sprite/sprite@2x.png',
       retina3xImgPath: '../images/sprite/sprite@3x.png',
-      cssName: 'sprite.scss',
+      cssName: '_sprite.scss',
 			padding: 8
 		}))
 		.on('error', err => console.log(err));

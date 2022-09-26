@@ -23,11 +23,8 @@
 	}
 	&__ico {
 		position: absolute;
-		right: 0;
 		top: 0.3rem;
-		&--check {
-			@include sprite.retina-sprite(sprite.$ico-check-group, sprite.$ico-check-group-3x);
-		}
+		right: 0;
 		&--error {
 			@include sprite.retina-sprite(sprite.$ico-error-group, sprite.$ico-error-group-3x);
 		}
@@ -43,6 +40,14 @@
 		}
 		&--error {
 			color: variables.$form-error;
+		}
+	}
+	&__check {
+		display: flex;
+		column-gap: 3.5rem;
+		#{$self}__inner {
+			display: flex;
+			column-gap: 1rem;
 		}
 	}
 }
