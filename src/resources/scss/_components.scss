@@ -17,6 +17,7 @@
 .flexbox {
 	display: flex;
 	align-items: center;
+	justify-content: space-between;
 	&:not(:last-child) {
 		margin-bottom: 2rem;
 	}
@@ -103,19 +104,22 @@
 
 // upload
 .upload {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	position: relative;
-	height: 19rem;
-	border: 0.1rem dashed #D7D7E0;
-	border-radius: 2rem;
+	&__mask {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		position: relative;
+		height: 19rem;
+		border: 0.1rem dashed #D7D7E0;
+		border-radius: 2rem;
+	}
 	&__preview {
 		position: absolute;
 		left: -0.1rem;
 		top: -0.1rem;
 		right: -0.1rem;
 		bottom: -0.1rem;
+		z-index: 1;
 		clip-path: inset(0 round 2rem);
 
 		img {
@@ -162,5 +166,16 @@
 		color: #9294A0;
 		font-size: 1.4rem;
 		line-height: 1.6rem;
+	}
+	&__change {
+		display: flex;
+		align-items: center;
+		gap: 0.8rem;
+		font-size: 1.4rem;
+		line-height: 1.6rem;
+
+		i {
+			@include sprite.retina-sprite(sprite.$ico-change-group, sprite.$ico-change-group-3x);
+		}
 	}
 }

@@ -35,9 +35,19 @@
 		gap: 0.4rem;
 	}
 	&__upload {
+		#{$self}__filter {
+			display: flex;
+			justify-content: flex-end;
+			margin-bottom: 2rem;
+		}
 		#{$self}__preview {
 			height: calc(100vw - 4.8rem);
 			clip-path: inset(0 round 2rem);
+
+			img {
+				width: 100%;
+				height: 100%;
+			}
 		}
 		#{$self}__file {
 			margin-top: 1.2rem;

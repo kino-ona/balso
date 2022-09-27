@@ -3,6 +3,11 @@
 
 .form {
 	$self: &;
+	&__set {
+		&:not(:first-child) {
+			margin-top: 3.2rem;
+		}
+	}
 	&__head {
 		display: flex;
 		&:not(:last-child) {

@@ -122,6 +122,18 @@ input[type='radio'] {
 	}
 }
 
+select {
+	appearance: none;
+	padding-right: 24px;
+	border: 0;
+	background: url('../images/bg_select.png') no-repeat 100% 50%;
+	background-size: 16px 16px;
+	background-color: transparent;
+	font-size: 1.6rem;
+	line-height: 2.4rem;
+	outline: none;
+}
+
 a {
 	text-decoration: none;
 }
