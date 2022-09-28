@@ -46,4 +46,10 @@
 	&--tertiary-color {
 		color: variables.$quinary-color;
 	}
+	&__weight-black {
+		font-weight: 900;
+	}
+	&__weight-bold {
+		font-weight: 700;
+	}
 }

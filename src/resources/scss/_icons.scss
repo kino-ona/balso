@@ -7,4 +7,7 @@
 	&--arrow-down {
 		@include sprite.retina-sprite(sprite.$ico-arrow-down-group, sprite.$ico-arrow-down-group-3x);
 	}
+	&--complete {
+		@include sprite.retina-sprite(sprite.$ico-complete-group, sprite.$ico-complete-group-3x);
+	}
 }

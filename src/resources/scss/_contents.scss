@@ -4,11 +4,18 @@
 // contents
 .contents {
 	$self: &;
-	padding: 8.4rem 0 calc(constant(safe-area-inset-bottom) + 4rem);
-	padding: 8.4rem 0 calc(env(safe-area-inset-bottom) + 4rem);
+	display: flex;
+	flex-direction: column;
+	row-gap: 4rem;
+	padding: 8.4rem 0 0;
+	padding: 8.4rem 0 0;
 	&__separate {
 		padding: 0 calc(constant(safe-area-inset-right) + 2.4rem) 0 calc(constant(safe-area-inset-left) + 2.4rem);
 		padding: 0 calc(env(safe-area-inset-right) + 2.4rem) 0 calc(env(safe-area-inset-left) + 2.4rem);
+		&:last-child {
+			padding-bottom: calc(constant(safe-area-inset-bottom) + 4rem);
+			padding-bottom: calc(env(safe-area-inset-bottom) + 4rem);
+		}
 
 		> .button {
 			&:not(:first-child) {
@@ -35,26 +42,22 @@
 			}
 		}
 	}
-	&__round {
-		padding: 4rem calc(constant(safe-area-inset-right) + 2.4rem) 4rem calc(constant(safe-area-inset-left) + 2.4rem);
-		padding: 4rem calc(env(safe-area-inset-right) + 2.4rem) 4rem calc(env(safe-area-inset-left) + 2.4rem);
+	&__rounded {
+		padding: 4rem calc(constant(safe-area-inset-right) + 2.4rem) calc(constant(safe-area-inset-bottom) + 4rem) calc(constant(safe-area-inset-left) + 2.4rem);
+		padding: 4rem calc(env(safe-area-inset-right) + 2.4rem) calc(env(safe-area-inset-bottom) + 4rem) calc(env(safe-area-inset-left) + 2.4rem);
 		border-radius: 3.6rem 3.6rem 0 0;
+		background-color: #fff;
+
+		.title {
+			&:not(:last-child) {
+				margin-bottom: 1.2rem;
+			}
+		}
+
+		.desc {
+			&:not(:last-child) {
+				margin-bottom: 2rem;
+			}
+		}
 	}
-	// &__bottom {
-	// 	margin-top: auto;
-	// 	border-radius: 2.5rem 2.5rem 0 0;
-	// 	background-color: variables.$secondary-color;
-	// }
-	// &__overlap {
-	// 	padding: 1.25em calc(constant(safe-area-inset-right) + 2.4rem) 1.25em calc(constant(safe-area-inset-left) + 2.4rem);
-	// 	padding: 1.25em calc(env(safe-area-inset-right) + 2.4rem) 1.25em calc(env(safe-area-inset-left) + 2.4rem);
-	// 	border-radius: 2.5rem 2.5rem 0 0;
-	// 	&:last-child {
-	// 		padding-bottom: calc(constant(safe-area-inset-bottom) + 7rem);
-	// 		padding-bottom: calc(env(safe-area-inset-bottom) + 7rem);
-	// 	}
-	// 	&--white {
-	// 		background-color: #fff;
-	// 	}
-	// }
 }

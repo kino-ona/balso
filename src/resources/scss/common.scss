@@ -1,3 +1,4 @@
+@use 'mixins';
 @use 'variables';
 @use 'sprite/sprite';
 @use 'fonts';
@@ -6,8 +7,10 @@
 @use 'typographys';
 @use 'forms';
 @use 'icons';
+@use 'modal';
 @use 'components';
 @use 'swiper';
+@use 'layout';
 @use 'header';
 // @use 'nav';
 @use 'contents';
@@ -88,10 +91,39 @@
 			}
 		}
 	}
-
-	.button {
-		&:not(:first-child) {
-			margin-top: 2rem;
+	&__data {
+		#{$self}__box {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			position: relative;
+			height: 6.4rem;
+			padding: 0 2rem;
+			border: 0.1rem solid variables.$stroke;
+			border-radius: 1.2rem;
+			background-color: #fff;
+			&:not(:first-child) {
+				margin-top: 2.8rem;
+				&:before {
+					content: '';
+					display: block;
+					position: absolute;
+					left: 50%;
+					top: -2.2rem;
+					width: 0.9rem;
+					height: 0.9rem;
+					margin-left: -0.5rem;
+					border-right: 0.1rem solid #000;
+					border-bottom: 0.1rem solid #000;
+					@include mixins.rotate(45);
+				}
+			}
+		}
+		#{$self}__value {
+			color: variables.$senary-color;
+			font-weight: 700;
+			font-size: 1.8rem;
+			line-height: 2.4rem;
 		}
 	}
 }

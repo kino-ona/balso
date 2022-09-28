@@ -1,0 +1,123 @@
+@use 'variables';
+@use 'sprite/sprite';
+
+// modal
+.modal {
+	$self: &;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 150;
+	&__dimmed {
+		position: absolute;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		background-color: rgba(0,0,0,.6);
+	}
+	&__body {
+		position: relative;
+		width: calc(100% - 8rem);
+		border-radius: 2rem;
+		background-color: #fff;
+	}
+	&__contents {
+		padding: 3.2rem 2rem 2rem;
+		text-align: center;
+
+		.title {
+			&:not(:last-child) {
+				margin-bottom: 1.2rem;
+			}
+
+			.point {
+				display: flex;
+				&__mark {
+					width: 2rem;
+					height: 2rem;
+					font-size: 1.4rem;
+				}
+				&__number {
+					font-weight: inherit;
+					font-size: inherit;
+					line-height: inherit;
+				}
+			}
+		}
+		
+		.desc {
+			&:not(:first-child) {
+				margin-top: 1.2rem;
+			}
+			&--secondary {
+				&:not(:first-child) {
+					margin-top: 1.6rem;
+				}
+			}
+			&__weight-bold {
+				color: #000;
+			}
+		}
+
+		.button {
+			&:not(:first-child) {
+				margin-top: 3.2rem;
+			}
+			&__item {
+				height: 5.2rem;
+				border-radius: 1.2rem;
+				font-weight: 600;
+			}
+		}
+	}
+	&__ico {
+		display: flex;
+		justify-content: center;
+		margin: -5.2rem 0 2rem;
+		&--complete {
+
+			i {
+				@include sprite.retina-sprite(sprite.$ico-modal-complete-group, sprite.$ico-modal-complete-group-3x);
+			}
+		}
+		&--point {
+
+			i {
+				@include sprite.retina-sprite(sprite.$ico-modal-point-group, sprite.$ico-modal-point-group-3x);
+			}
+		}
+		&--empty {
+
+			i {
+				@include sprite.retina-sprite(sprite.$ico-modal-empty-group, sprite.$ico-modal-empty-group-3x);
+			}
+		}
+		&--gift {
+
+			i {
+				@include sprite.retina-sprite(sprite.$ico-modal-gift-group, sprite.$ico-modal-gift-group-3x);
+			}
+		}
+		& + .title {
+			font-size: 2rem;
+			line-height: 2.8rem;
+		}
+	}
+	&__bottom {
+		margin-top: 2rem;
+
+		.desc {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 0.4rem;
+		}
+	}
+}

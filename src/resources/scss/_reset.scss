@@ -142,9 +142,3 @@ table {
 	border-collapse: collapse;
 	border-spacing: 0;
 }
-
-body {
-	// min-height: calc(var(--vh, 1vh) * 100);
-	background-color: variables.$quaternary-color;
-  touch-action: pan-x pan-y;
-}

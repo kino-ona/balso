@@ -1,0 +1,87 @@
+@@include('../inc/pagehead.inc', {
+	"pagetitle": "발로소득 - 스페셜 챌린지 - 검수",
+	"webroot": "../"
+})
+</head>
+<body class="floor">
+	<div class="wrap">
+		<header class="header">
+			<div class="header__row">
+				<a href="#" class="header__back">
+					<span class="a11y">이전</span>
+				</a>
+			</div>
+		</header>
+		<div class="contents">
+			<div class="contents__separate">
+				<div class="special-challenge">
+					<p class="title">
+						걸음 수를 확인 중이에요.<br>
+						확인이 완료되면 알려드릴게요!
+					</p>
+					<div class="lottie">
+						<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+						<lottie-player src="../lottie/9565-gift-box-bouncing-animation.json" background="transparent" speed="1" loop autoplay>
+						</lottie-player>
+					</div>
+					<div class="special-challenge__data">
+						<div class="special-challenge__box">
+							<p class="title title--tertiary">걸음</p>
+							<p class="special-challenge__value">00,000</p>
+						</div>
+						<div class="special-challenge__box">
+							<p class="title title--tertiary">나의 소득</p>
+							<div class="point">
+								<span class="point__mark">C</span>
+								<span class="point__number">0</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="button">
+					<div class="button__row">
+						<button type="button" class="button__item button__item--tertiary" disabled>소득 받기</button>
+					</div>
+				</div>
+			</div>
+			<div class="contents__rounded">
+				<p class="title title--secondary">걸음수 캡쳐 사진</p>
+				<p class="desc">확인중으로 변경이 불가능해요!</p>
+				<div class="upload">
+					<div class="upload__mask">
+						<button type="button" class="upload__file">
+							<i class="upload__ico" aria-hidden="true"></i>
+							<span class="upload__text">사진 추가하기</span>
+						</button>
+						<div class="upload__uploaded">
+							<img src="../resources/images/dummy/@picture.png" alt="">
+						</div>
+						<div class="upload__complete">
+							<i class="ico ico--complete" aria-hidden="true"></i>
+							<span class="upload__text">업로드 완료</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal" aria-hidden="false">
+		<div class="modal__dimmed" aria-hidden="true"></div>
+		<div class="modal__body">
+			<div class="modal__contents">
+				<p class="title title--secondary">걸음 수 확인중</p>
+				<p class="desc desc--tertiary-color">확인이 완료되면알려드릴게요!</p>
+				<div class="button">
+					<div class="button__row">
+						<button type="button" class="button__item">알림받기</button>
+					</div>
+					<div class="button__row">
+						<button type="button" class="button__item button__item--quaternary">취소</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

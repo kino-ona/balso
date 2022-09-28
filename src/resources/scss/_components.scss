@@ -104,16 +104,17 @@
 
 // upload
 .upload {
+	$self: &;
 	&__mask {
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		position: relative;
-		height: 19rem;
+		height: 48.72vw;
 		border: 0.1rem dashed #D7D7E0;
 		border-radius: 2rem;
 	}
-	&__preview {
+	&__uploaded {
 		position: absolute;
 		left: -0.1rem;
 		top: -0.1rem;
@@ -127,45 +128,66 @@
 			height: 100%;
 		}
 	}
+	&__complete {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 1.2rem;
+		position: absolute;
+		left: -1px;
+		top: -1px;
+		right: -1px;
+		bottom: -1px;
+		z-index: 2;
+		background-color: rgba(0,0,0,0.4);
+		clip-path: inset(0 round 2rem);
+		#{$self}__text {
+			color: #fff;
+			font-weight: 600;
+			font-size: 1.8rem;
+			line-height: 2.4rem;
+		}
+	}
 	&__file {
 		display: flex;
 		flex-direction: column;
 		gap: 1.2rem;
-	}
-	&__ico {
-		position: relative;
-		width: 3.2rem;
-		height: 3.2rem;
-		margin: 0 auto;
-		border-radius: 50%;
-		background-color: variables.$primary-color;
-		&:before,
-		&:after {
-			content: '';
-			position: absolute;
-			left: 50%;
-			top: 50%;
-			display: block;
-			border-radius: 100vw;
-			background-color: #fff;
+		#{$self}__text {
+			color: variables.$senary-color;
+			font-size: 1.4rem;
+			line-height: 1.6rem;
 		}
-		&:before {
-			width: 0.2rem;
-			height: 1.6rem;
-			margin-left: -0.1rem;
-			margin-top: -0.8rem;
+		#{$self}__ico {
+			position: relative;
+			width: 3.2rem;
+			height: 3.2rem;
+			margin: 0 auto;
+			border-radius: 50%;
+			background-color: variables.$primary-color;
+			&:before,
+			&:after {
+				content: '';
+				position: absolute;
+				left: 50%;
+				top: 50%;
+				display: block;
+				border-radius: 100vw;
+				background-color: #fff;
+			}
+			&:before {
+				width: 0.2rem;
+				height: 1.6rem;
+				margin-left: -0.1rem;
+				margin-top: -0.8rem;
+			}
+			&:after {
+				width: 1.6rem;
+				height: 0.2rem;
+				margin-left: -0.8rem;
+				margin-top: -0.1rem;
+			}
 		}
-		&:after {
-			width: 1.6rem;
-			height: 0.2rem;
-			margin-left: -0.8rem;
-			margin-top: -0.1rem;
-		}
-	}
-	&__text {
-		color: #9294A0;
-		font-size: 1.4rem;
-		line-height: 1.6rem;
 	}
 	&__change {
 		display: flex;
@@ -177,5 +199,15 @@
 		i {
 			@include sprite.retina-sprite(sprite.$ico-change-group, sprite.$ico-change-group-3x);
 		}
+	}
+}
+
+// lottie
+.lottie {
+	&:not(:first-child) {
+		margin-top: 4rem;
+	}
+	&:not(:last-child) {
+		margin-bottom: 4rem;
 	}
 }

@@ -1,0 +1,9 @@
+@use 'variables';
+
+.floor {
+	background-color: variables.$quaternary-color;
+  touch-action: pan-x pan-y;
+	&--white {
+		background-color: #fff;
+	}
+}

@@ -228,7 +228,7 @@ function server(done) {
 		browsersync.init({
 			server: {
 				baseDir: 'dist',
-				index: '_work_sheet.html'
+				index: 'path.html'
 			},
 			open: false
 		})
@@ -238,7 +238,7 @@ function server(done) {
 
 // clean
 function clean(done) {
-	del.sync(['dist/**/*', '!dist/resources', 'dist/resources/**', '!dist/resources/fonts', '!dist/lottie', '!dist/path/**', '!dist/path.html', '!dist/_work_sheet.html']);
+	del.sync(['dist/**/*', '!dist/resources', 'dist/resources/**', '!dist/resources/fonts', '!dist/lottie', '!dist/path/**', '!dist/path.html']);
 	done();
 }
 exports.clean = clean;

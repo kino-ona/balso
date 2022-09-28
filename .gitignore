@@ -1,6 +1,7 @@
 node_modules
 dist/*.html
 dist/html
+dist/path
 dist/resources/images
 dist/resources/css
 dist/resources/js

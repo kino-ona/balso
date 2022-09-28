@@ -1,5 +1,5 @@
 @@include('../inc/pagehead.inc', {
-	"pagetitle": "발로소득 - 스페셜 챌린지 - 상세 AOS",
+	"pagetitle": "발로소득 - 스페셜 챌린지 - 상세 IOS",
 	"webroot": "../"
 })
 </head>
@@ -32,7 +32,7 @@
 							<div class="overlap__row">
 								<div class="overlap__item">
 									<div class="overlap__figure">
-										<img src="../resources/images/img_health_samsung.png" alt="">
+										<img src="../resources/images/img_health_apple.png" alt="">
 									</div>
 								</div>
 								<div class="overlap__item">
@@ -50,8 +50,8 @@
 						<div class="button">
 							<div class="button__row">
 								<a href="#" class="button__item button__item--mix">
-									<img src="../resources/images/img_health_samsung_circle.png" alt="" class="button__img">
-									삼성헬스
+									<img src="../resources/images/img_health_apple_circle.png" alt="" class="button__img">
+									건강
 									<i class="ico ico--arrow-right" aria-hidden="true"></i>
 								</a>
 							</div>
@@ -69,6 +69,12 @@
 					<span class="flag">STEP. 2</span>
 					<div class="flexbox">
 						<p class="title">스크린샷 업로드</p>
+						<div class="upload">
+							<button type="button" class="upload__change">
+								<i></i>
+								변경
+							</button>
+						</div>
 					</div>
 					<div class="upload">
 						<div class="upload__mask">
@@ -76,12 +82,37 @@
 								<i class="upload__ico" aria-hidden="true"></i>
 								<span class="upload__text">사진 추가하기</span>
 							</button>
+							<div class="upload__uploaded">
+								<img src="../resources/images/dummy/@picture.png" alt="">
+							</div>
 						</div>
 					</div>
 				</div>
 				<div class="button">
 					<div class="button__row">
-						<button type="button" class="button__item button__item--tertiary" disabled>이미지 업로드</button>
+						<button type="button" class="button__item">완료</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal" aria-hidden="false">
+		<div class="modal__dimmed" aria-hidden="true"></div>
+		<div class="modal__body">
+			<div class="modal__contents">
+				<p class="title title--secondary">인증 완료하기</p>
+				<p class="desc desc--tertiary-color">
+					아직 인증이 완료되지 않았어요!<br>
+					완료하기를 눌러 인증을 완료할까요?
+				</p>
+				<p class="desc desc--secondary desc--tertiary-color">* 중단시 업로드한 정보가 모두 삭제돼요</p>
+				<div class="button">
+					<div class="button__row">
+						<button type="button" class="button__item">완료하기</button>
+					</div>
+					<div class="button__row">
+						<button type="button" class="button__item button__item--tertiary">중단</button>
 					</div>
 				</div>
 			</div>

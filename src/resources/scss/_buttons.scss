@@ -29,6 +29,10 @@
 		&--tertiary {
 			background-color: #CCCCD1;
 		}
+		&--quaternary {
+			background-color: variables.$quaternary-color;
+			color: variables.$quinary-color;
+		}
 		&--auto {
 			flex: 0 0 6.4rem;
 		}
