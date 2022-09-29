@@ -21,6 +21,7 @@
 	$self: &;
 	&__intro {
 		#{$self}__top {
+			
 			.title {
 				margin-bottom: 2.1rem;
 				
@@ -29,9 +30,14 @@
 				}
 			}
 		}
+
+		.button {
+			&:not(:first-child) {
+				margin-top: 2rem;
+			}
+		}
 	}
 	&__promo {
-		// margin-top: 7.1875rem;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -88,6 +94,12 @@
 					width: 100%;
 					height: 100%;
 				}
+			}
+		}
+
+		.button {
+			&:not(:first-child) {
+				margin-top: 1.2rem;
 			}
 		}
 	}
