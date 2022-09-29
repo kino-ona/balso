@@ -201,13 +201,3 @@
 		}
 	}
 }
-
-// lottie
-.lottie {
-	&:not(:first-child) {
-		margin-top: 4rem;
-	}
-	&:not(:last-child) {
-		margin-bottom: 4rem;
-	}
-}

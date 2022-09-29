@@ -4,16 +4,23 @@
 // modal
 .modal {
 	$self: &;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
 	position: fixed;
 	left: 0;
 	top: 0;
 	right: 0;
 	bottom: 0;
 	z-index: 150;
+	&__container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		position: absolute;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+	}
 	&__dimmed {
 		position: absolute;
 		left: 0;

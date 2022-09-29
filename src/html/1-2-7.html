@@ -3,7 +3,7 @@
 	"webroot": "../"
 })
 </head>
-<body class="floor">
+<body class="floor scrolllock"><!-- 모달 오픈 시 body에 scrolllock class 전달 -->
 	<div class="wrap">
 		<header class="header">
 			<div class="header__row">
@@ -19,9 +19,9 @@
 						걸음 수를 확인 중이에요.<br>
 						확인이 완료되면 알려드릴게요!
 					</p>
-					<div class="lottie">
+					<div class="lottie" style="margin: -6.1rem 0 4rem;">
 						<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
-						<lottie-player src="../lottie/9565-gift-box-bouncing-animation.json" background="transparent" speed="1" loop autoplay>
+						<lottie-player src="../lottie/shoes_wing.json" background="transparent" speed="1" loop autoplay>
 						</lottie-player>
 					</div>
 					<div class="special-challenge__data">
@@ -67,22 +67,24 @@
 	</div>
 
 	<div class="modal" aria-hidden="false">
-		<div class="modal__dimmed" aria-hidden="true"></div>
-		<div class="modal__body">
-			<div class="modal__contents">
-				<div class="modal__ico modal__ico--point">
-					<i></i>
-				</div>
-				<p class="title">
-					<span class="point">
-						<span class="point__mark">C</span>
-						<span class="point__number">2,480 소득!</span>
-					</span>
-				</p>
-				<p class="desc desc--tertiary-color">걷기 처럼 내가 놓치고 있는 일상 소득이 있는지 확인해볼까요?</p>
-				<div class="button">
-					<div class="button__row">
-						<button type="button" class="button__item">일상 소득 확인</button>
+		<div class="modal__container">
+			<div class="modal__dimmed" aria-hidden="true"></div>
+			<div class="modal__body">
+				<div class="modal__contents">
+					<div class="modal__ico modal__ico--point">
+						<i></i>
+					</div>
+					<p class="title">
+						<span class="point">
+							<span class="point__mark">C</span>
+							<span class="point__number">2,480 소득!</span>
+						</span>
+					</p>
+					<p class="desc desc--tertiary-color">걷기 처럼 내가 놓치고 있는 일상 소득이 있는지 확인해볼까요?</p>
+					<div class="button">
+						<div class="button__row">
+							<button type="button" class="button__item modal__close">일상 소득 확인</button>
+						</div>
 					</div>
 				</div>
 			</div>

@@ -3,37 +3,39 @@
 	"webroot": "../"
 })
 </head>
-<body class="floor">
+<body class="floor scrolllock"><!-- 모달 오픈 시 body에 scrolllock class 전달 -->
 	<div class="modal" aria-hidden="false">
-		<div class="modal__dimmed" aria-hidden="true"></div>
-		<div class="modal__body">
-			<div class="modal__contents">
-				<div class="modal__ico modal__ico--point">
-					<i></i>
-				</div>
-				<p class="title">
-					<span class="point">
-						<span class="point__mark">C</span>
-						<span class="point__number">20 당첨!</span>
-					</span>
-					보너스 봉투를 더 열어보세요
-				</p>
-				<div class="button">
-					<div class="button__row">
-						<button type="button" class="button__item">봉투 열기</button>
+		<div class="modal__container">
+			<div class="modal__dimmed" aria-hidden="true"></div>
+			<div class="modal__body">
+				<div class="modal__contents">
+					<div class="modal__ico modal__ico--point">
+						<i></i>
 					</div>
-					<div class="button__row">
-						<button type="button" class="button__item button__item--quaternary">당첨 포기</button>
-					</div>
-				</div>
-				<div class="modal__bottom">
-					<p class="desc desc--secondary desc--secondary-color">
-						보너스 봉투 개봉시
+					<p class="title">
 						<span class="point">
 							<span class="point__mark">C</span>
+							<span class="point__number">20 당첨!</span>
 						</span>
-						차감
+						보너스 봉투를 더 열어보세요
 					</p>
+					<div class="button">
+						<div class="button__row">
+							<button type="button" class="button__item modal__close">봉투 열기</button>
+						</div>
+						<div class="button__row">
+							<button type="button" class="button__item button__item--quaternary modal__close">당첨 포기</button>
+						</div>
+					</div>
+					<div class="modal__bottom">
+						<p class="desc desc--secondary desc--secondary-color">
+							보너스 봉투 개봉시
+							<span class="point">
+								<span class="point__mark">C</span>
+							</span>
+							차감
+						</p>
+					</div>
 				</div>
 			</div>
 		</div>

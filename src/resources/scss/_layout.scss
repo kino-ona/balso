@@ -1,9 +1,18 @@
 @use 'variables';
 
+// body background
 .floor {
 	background-color: variables.$quaternary-color;
   touch-action: pan-x pan-y;
 	&--white {
 		background-color: #fff;
 	}
+}
+
+// modal open scroll lock
+.scrolllock {
+	overflow: hidden;
+	position: fixed;
+	left: 0;
+	width: 100%;
 }
