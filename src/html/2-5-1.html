@@ -1,23 +1,112 @@
 @@include('../inc/pagehead.inc', {
-	"pagetitle": "발로소득",
+	"pagetitle": "발로소득 - 챌린지 - 일상 챌린지",
 	"webroot": "../"
 })
 </head>
-<body>
-	<div class="wrap">
-		<header class="header header--sub">
+<body class="floor floor--white">
+	<div id="wrap">
+		<header class="header">
 			<div class="header__row">
-				<h1 class="header__logo a11y">발로소득</h1>
-				<h2 class="header__title">일상 챌린지</h2>
 				<a href="#" class="header__back">
 					<span class="a11y">이전</span>
 				</a>
+				<h1 class="header__title">일상 챌린지</h1>
 			</div>
 		</header>
 		<div class="contents">
-			<div class="contents__bottom">
-				<div class="contents__overlap contents__overlap--white">
-					asdasd
+			<div class="challenge">
+				<div class="challenge__box">
+					<div class="challenge__intro challenge__intro--beginning">
+						<div class="challenge__type">
+							<img src="../resources/images/img_challenge_type_c01.png" alt="">
+						</div>
+						<div class="challenge__summary">
+							<span class="flag">진행중</span>
+							<p class="title">1000 걸음 걷기</p>
+							<p class="desc">
+								시작이 반이다! 건강습관 형성을 위해<br>
+								1,000걸음 걷기 부터 시작해 보세요.<br>
+								간단하게 걷고 최대 5,0000 소득금을 벌 수 있어요.
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="challenge__box">
+					<div class="flexbox">
+						<p class="title title--secondary">오늘 나의 걸음 수</p>
+					</div>
+					<div class="progress">
+						<div class="progress__total">
+							<span class="progress__current">980</span>
+							<span class="progress__max"><span class="progress__text">걸음</span> / 1,000걸음</span>
+						</div>
+						<div class="progress__bar">
+							<span role="progressbar" aria-valuetext="20%" aria-valuemin="0" aria-valuemax="1000" style="width: 20%;"></span>
+						</div>
+					</div>
+				</div>
+				<div class="challenge__box">
+					<div class="flexbox">
+						<p class="title title--secondary">성공현황</p>
+					</div>
+					<div class="auth-day">
+						<div class="auth-day__row">
+							<div class="auth-day__item auth-day__item--completed">
+								<span class="auth-day__day auth-day__day--holiday">일</span>
+								<span class="auth-day__circle">7</span>
+								<p class="auth-day__text">6,326걸음</p>
+							</div>
+							<div class="auth-day__item auth-day__item--completed">
+								<span class="auth-day__day">월</span>
+								<span class="auth-day__circle">8</span>
+								<p class="auth-day__text">6,326걸음</p>
+							</div>
+							<div class="auth-day__item">
+								<span class="auth-day__day">화</span>
+								<span class="auth-day__circle">9</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="challenge__box">
+					<div class="flexbox">
+						<p class="title title--secondary">남은 기간</p>
+					</div>
+					<div class="challenge__time">
+						<div class="challenge__inner">
+							<div class="challenge__count">
+								<span class="challenge__number">0</span>
+								<span class="challenge__number">1</span>
+							</div>
+							<p class="challenge__unit">일</p>
+						</div>
+						<div class="challenge__symbol">:</div>
+						<div class="challenge__inner">
+							<div class="challenge__count">
+								<span class="challenge__number">0</span>
+								<span class="challenge__number">3</span>
+							</div>
+							<p class="challenge__unit">시간</p>
+						</div>
+						<div class="challenge__symbol">:</div>
+						<div class="challenge__inner">
+							<div class="challenge__count">
+								<span class="challenge__number">2</span>
+								<span class="challenge__number">5</span>
+							</div>
+							<p class="challenge__unit">분</p>
+						</div>
+					</div>
+				</div>
+				<div class="challenge__box">
+
+				</div>
+				<div class="challenge__box">
+					<div class="button">
+						<div class="button__row">
+							<button type="button" class="button__item">소득받기</button>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

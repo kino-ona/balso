@@ -1,0 +1,62 @@
+@@include('../inc/pagehead.inc', {
+	"pagetitle": "발로소득 - 챌린지 - 일상 챌린지 - 인증피드",
+	"webroot": "../"
+})
+</head>
+<body class="floor floor--black">
+	<div id="wrap">
+		<header class="header">
+			<div class="header__row">
+				<a href="#" class="header__back">
+					<span class="a11y">이전</span>
+				</a>
+				<h1 class="header__title">
+					인증피드
+					<span class="header__unit">피트니스 인증 챌린지 I</span>
+				</h1>
+			</div>
+		</header>
+		<div class="contents">
+			<div class="challenge">
+				<div class="feed">
+					<div class="feed__top">
+						<div class="feed__left">
+							<p class="feed__id">charlieputh99</p>
+							<p class="feed__time">3시간 전</p>
+						</div>
+						<div class="feed__right">
+							<button type="button" class="feed__util">삭제하기</button>
+						</div>
+					</div>
+					<div class="feed__img">
+						<div class="swiper">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<img src="../resources/images/dummy/@feed_cheetingday.png" alt="">
+								</div>
+								<div class="swiper-slide">
+									<img src="../resources/images/dummy/@feed_fitness.png" alt="">
+								</div>
+							</div>
+							<div class="swiper-button-prev"></div>
+  						<div class="swiper-button-next"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+
+<script type="module">
+	const feedImgSwiper = new Swiper('.feed__img .swiper', {
+		speed: 500,
+			navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},
+	});
+
+	import {Swiper} from '../resources/js/module/swiper-bundle.esm.browser.min.js';
+</script>
+</html>

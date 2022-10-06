@@ -8,6 +8,7 @@
 @use 'forms';
 @use 'icons';
 @use 'modal';
+@use 'bullet';
 @use 'components';
 @use 'swiper';
 @use 'layout';
@@ -97,6 +98,7 @@
 				label {
 					display: block;
 					position: relative;
+					height: 100%;
 
 					img {
 						width: 100%;
@@ -151,6 +153,407 @@
 	> .title {
 		&:first-child {
 			margin-top: 2rem;
+		}
+	}
+}
+
+// challenge
+.challenge {
+	$self: &;
+	&__box {
+		padding: 2.4rem calc(constant(safe-area-inset-right) + 2.4rem) 4rem calc(constant(safe-area-inset-left) + 2.4rem);
+		padding: 2.4rem calc(env(safe-area-inset-right) + 2.4rem) 4rem calc(env(safe-area-inset-left) + 2.4rem);
+		background-color: #fff;
+		&:first-child {
+			padding-top: 2rem;
+			#{$self}__intro {
+				margin-top: -2rem;
+			}
+		}
+		&:last-child {
+			padding-bottom: calc(constant(safe-area-inset-bottom) + 4rem);
+			padding-bottom: calc(env(safe-area-inset-bottom) + 4rem);
+		}
+		&:not(:first-child) {
+			border-top: 1.6rem solid variables.$quaternary-color;
+		}
+
+		> .flexbox {
+			&:not(:last-child) {
+				margin-bottom: 2.4rem;
+			}
+		}
+
+		.overlap {
+			&__row {
+				gap: 1.2rem;
+			}
+			&__item {
+				flex: none;
+				position: relative;
+				width: 41.03vw;
+				height: 51.28vw;
+			}
+			&__figure {
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 100%;
+				height: 100%;
+				&:before {
+					content: '';
+					display: block;
+					position: absolute;
+					left: 0;
+					top: 0;
+					width: 100%;
+					height: 100%;
+					background: linear-gradient(180deg, #00000000 0%, #00000098 100%) 0% 0% no-repeat;
+				}
+		
+				img {
+					width: 100%;
+					height: 100%;
+				}
+			}
+			&__figcaption {
+				display: flex;
+				flex-direction: column-reverse;
+				gap: 0.4rem;
+				position: relative;
+				height: 100%;
+				padding: 1.6rem 1.5rem;
+				color: #fff;
+			}
+			&__id {
+				font-size: 1.2rem;
+				line-height: 1.8rem;
+			}
+			&__kcal {
+				font-weight: 700;
+				font-size: 1.6rem;
+				line-height: 2.4rem;
+			}
+		}
+	}
+	&__intro {
+		#{$self}__type {
+			display: flex;
+			justify-content: center;
+			margin-bottom: 2.4rem;
+
+			img {
+				width: 240px;
+				height: 240px;
+			}
+		}
+		#{$self}__summary {
+			text-align: center;
+
+			.title {
+				&:not(:first-child) {
+					margin-top: 0.8rem;
+				}
+				&:not(:last-child) {
+					margin-bottom: 2.4rem;
+				}
+			}
+		}
+		#{$self}__info {
+			&:not(:first-child) {
+				margin-top: 2rem;
+			}
+			#{$self}__row {
+				display: flex;
+				gap: 1.2rem;
+				&:not(:first-child) {
+					margin-top: 1.6rem;
+				}
+			}
+			#{$self}__ico {
+				display: flex;
+				flex: none;
+				&--calendar {
+					
+					i {
+						@include sprite.retina-sprite(sprite.$ico-challenge-calendar-group, sprite.$ico-challenge-calendar-group-3x);
+					}
+				}
+				&--count {
+					
+					i {
+						@include sprite.retina-sprite(sprite.$ico-challenge-count-group, sprite.$ico-challenge-count-group-3x);
+					}
+				}
+				&--auth {
+					
+					i {
+						@include sprite.retina-sprite(sprite.$ico-challenge-auth-group, sprite.$ico-challenge-auth-group-3x);
+					}
+				}
+			}
+			#{$self}__text {
+				color: variables.$quinary-color;
+				font-weight: 600;
+				font-size: 1.6rem;
+				line-height: 2.4rem;
+				&--secondary {
+					color: #CCCCD1;
+				}
+			}
+		}
+		&--beginning {
+			#{$self}__type {
+
+				img {
+					width: 100px;
+					height: 100px;
+				}
+			}
+		}
+
+		.button {
+			&:not(:first-child) {
+				margin-top: 3.2rem;
+			}
+		}
+	}
+	&__total {
+		
+		.flexbox {
+			&:not(:last-child) {
+				margin-bottom: 0.8rem;
+			}
+		}
+
+		.point {
+			&__text {
+				font-weight: 700;
+				font-size: 1.4rem;
+				line-height: 2.4rem;
+			}
+		}
+
+		.between-item {
+			margin-top: 2.4rem;
+			padding-top: 2.4rem;
+			border-top: 0.1rem solid variables.$stroke;
+			&__group {
+				&:not(:first-child) {
+					margin-top: 1.2rem;
+				}
+			}
+			&__dt {
+				color: variables.$quinary-color;
+				font-weight: 400;
+			}
+		}
+	}
+	&__bottom {
+		padding: 2.8rem calc(constant(safe-area-inset-right) + 2.4rem) calc(constant(safe-area-inset-bottom) + 4rem) calc(constant(safe-area-inset-left) + 2.4rem);
+		padding: 2.8rem calc(env(safe-area-inset-right) + 2.4rem) calc(env(safe-area-inset-bottom) + 4rem) calc(env(safe-area-inset-left) + 2.4rem);
+		background-color: variables.$quaternary-color;
+	}
+	&__challenge {
+		&:last-child {
+			#{$self}__row {
+				&:last-child {
+					padding-bottom: 0;
+				}
+			}
+		}
+		#{$self}__row {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			padding-bottom: 2.4rem;
+			&:not(:first-child) {
+				padding-top: 2.4rem;
+				border-top: 0.1rem solid variables.$stroke;
+			}
+		}
+	}
+	&__time {
+		display: flex;
+		align-items: baseline;
+		justify-content: center;
+		gap: 1.2rem;
+		#{$self}__count {
+			display: flex;
+			gap: 0.4rem;
+		}
+		#{$self}__number {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 4.2rem;
+			height: 5.3rem;
+			border-radius: 0.8rem;
+			background-color: variables.$quaternary-color;
+			font-weight: 700;
+			font-size: 2.4rem;
+			text-align: center;
+		}
+		#{$self}__symbol {
+			font-weight: 700;
+			font-size: 2.4rem;
+		}
+		#{$self}__unit {
+			margin-top: 1.2rem;
+			color: variables.$quinary-color;
+			font-size: 1.4rem;
+			line-height: 2.6rem;
+			text-align: center;
+		}
+	}
+	&__graybox {
+		padding: 2rem;
+		border-radius: 1.2rem;
+		background-color: variables.$quaternary-color;
+		&:not(:first-child) {
+			margin-top: 2.4rem;
+		}
+	}
+
+	.feed {
+		$feed: '.' + feed;
+		padding: 1.6rem calc(constant(safe-area-inset-right) + 2.4rem) 4rem calc(constant(safe-area-inset-left) + 2.4rem);
+		padding: 1.6rem calc(env(safe-area-inset-right) + 2.4rem) 4rem calc(env(safe-area-inset-left) + 2.4rem);
+		color: #fff;
+		&__top {
+			display: flex;
+			align-items: flex-end;
+			justify-content: space-between;
+			margin-bottom: 1.6rem;
+			#{$feed}__left {
+				display: block;
+			}
+		}
+		&__id {
+			font-weight: 600;
+			font-size: 1.4rem;
+			line-height: 2.2rem;
+		}
+		&__time {
+			font-size: 1.2rem;
+			line-height: 1.8rem;
+			opacity: .5;
+		}
+		&__util {
+			font-size: 1.2rem;
+			line-height: 1.8rem;
+			opacity: .5;
+		}
+		&__img {
+			margin: 0 -2.4rem;
+
+			.swiper {
+				&-slide {
+					height: 100vw;
+
+					img {
+						width: 100%;
+						height: 100%;
+					}
+				}
+				&-button-prev,
+				&-button-next {
+					margin-top: -16px;
+					&:after {
+						display: none;
+					}
+				}
+				&-button-prev {
+					left: 24px;
+					@include sprite.retina-sprite(sprite.$ico-swiper-prev-group, sprite.$ico-swiper-prev-group-3x);
+				}
+				&-button-next {
+					right: 24px;
+					@include sprite.retina-sprite(sprite.$ico-swiper-next-group, sprite.$ico-swiper-next-group-3x);
+				}
+			}
+		}
+		&__info {
+			margin-top: 3.2rem;
+
+			.flexbox {
+				justify-content: flex-start;
+				gap: 0.8rem;
+			}
+		}
+		&__title {
+			font-weight: 700;
+			font-size: 1.8rem;
+			line-height: 2.6rem;
+			&--secondary {
+				color: variables.$primary-color;
+			}
+		}
+		&__detail {
+			font-size: 1.4rem;
+			line-height: 2.2rem;
+			#{$feed}__row {
+				&:not(:first-child) {
+					margin-top: 2rem;
+				}
+			}
+
+			dt {
+				font-weight: 600;
+				margin-bottom: 1.2rem;
+			}
+
+			dd {
+				opacity: .5;
+			}
+		}
+	}
+
+	.auth-day {
+		$authday: '.' + auth-day;
+		&__row {
+			display: flex;
+			justify-content: space-evenly;
+		}
+		&__item {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			gap: 0.8rem;
+			#{$authday}__day {
+				font-size: 1.4rem;
+				line-height: 2.2rem;
+				&--holiday {
+					color: #FC5239;
+				}
+				&--saturday {
+					color: variables.$primary-color;
+				}
+			}
+			#{$authday}__circle {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				width: 3.2rem;
+				height: 3.2rem;
+				border-radius: 50%;
+				background-color: variables.$quaternary-color;
+				color: variables.$quinary-color;
+				font-weight: 600;
+				font-size: 1.4rem;
+				line-height: 2.2rem;
+				text-align: center;
+			}
+			#{$authday}__text {
+				font-size: 1.2rem;
+				line-height: 1.8rem;
+			}
+			&--completed {
+				#{$authday}__circle {
+					background-color: variables.$primary-color;
+					color: #fff;
+				}
+			}
 		}
 	}
 }
