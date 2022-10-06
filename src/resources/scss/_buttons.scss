@@ -33,8 +33,9 @@
 			background-color: variables.$quaternary-color;
 			color: variables.$quinary-color;
 		}
-		&--auto {
-			flex: 0 0 6.4rem;
+		&--quinary {
+			background-color: variables.$secondary-color;
+			color: variables.$primary-color;
 		}
 		&--mix {
 			display: grid;
@@ -50,6 +51,13 @@
 				width: 4.6rem;
 				height: 4.6rem;
 			}
+		}
+		&--small {
+			flex: none;
+			padding: 0 1.2rem;
+			height: 3.2rem;
+			font-weight: 600;
+			font-size: 1.2rem;
 		}
 	}
 }

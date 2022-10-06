@@ -195,22 +195,3 @@ $sqrt_2: 1.41421356237;
 				}
 		}
 }
-
-// gradient bg
-@mixin dimm-gradient($direction, $rotate, $start:rgba(0, 0, 0, 1), $end:rgba(0, 0, 0, 0)) {
-	@if $direction==top and $rotate==null {
-		background-image: linear-gradient(to bottom, $start, $end);
-	}
-	@else if $direction==bottom and $rotate==null {
-		background-image: linear-gradient(to top, $start, $end);
-	}
-	@else if $direction==left and $rotate==null {
-		background-image: linear-gradient(to right, $start, $end);
-	}
-	@else if $direction==right and $rotate==null {
-		background-image: linear-gradient(to left, $start, $end);
-	}
-	@else if $direction==null and $rotate {
-		background-image: linear-gradient((#{$rotate}deg), $start, $end);
-	}
-}

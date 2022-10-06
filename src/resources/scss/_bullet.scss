@@ -1,0 +1,30 @@
+@use 'variables';
+
+// bullet
+.bullet {
+	$slef: &;
+	&__list {
+		font-size: 1.4rem;
+		line-height: 2.2rem;
+	}
+	&__item {
+		position: relative;
+		color: variables.$quinary-color;
+		&:not(:first-child) {
+			margin-top: 1.2rem;
+		}
+		&--dash {
+			padding-left: 10px;
+			&:before {
+				content: '-';
+				display: block;
+				position: absolute;
+				left: 0;
+				top: 0;
+				color: variables.$tertiary-color;
+				font-size: 1.4rem;
+				line-height: 2.2rem;
+			}
+		}
+	}
+}

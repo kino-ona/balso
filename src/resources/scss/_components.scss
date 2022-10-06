@@ -1,3 +1,4 @@
+@use 'mixins';
 @use 'variables';
 @use 'sprite/sprite';
 
@@ -198,6 +199,158 @@
 
 		i {
 			@include sprite.retina-sprite(sprite.$ico-change-group, sprite.$ico-change-group-3x);
+		}
+	}
+}
+
+// between list
+.between-item {
+	$self: &;
+	&__list {
+		font-weight: 600;
+		font-size: 1.6rem;
+		line-height: 2.4rem;
+			
+		.point {
+			#{$self}__number {
+				font-size: inherit;
+				line-height: inherit;
+			}
+		}
+	}
+	&__group {
+		display: flex;
+		justify-content: space-between;
+		&:not(:first-child) {
+			margin-top: 2rem;
+		}
+	}
+	&__dt {
+		color: variables.$tertiary-color;
+	}
+	&__dd {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-end;
+		justify-content: center;
+		width: 65%;
+		color: variables.$quinary-color;
+		text-align: right;
+
+		.group {
+			&:not(:first-child) {
+				margin-top: 1.6rem;
+			}
+		}
+	}
+	&--secondary {
+		#{$self}__list {
+			font-size: 1.4rem;
+			line-height: 2.2rem;
+		}
+		#{$self}__group {
+			&:not(:first-child) {
+				margin-top: 1.2rem;
+			}
+		}
+		#{$self}__dt {
+			font-weight: 400;
+		}
+		#{$self}__dd {
+			color: #000;
+		}
+	}
+	
+	.point {
+		&__number {
+			color: #000;
+		}
+	}
+}
+
+// rating
+.rating {
+	@include sprite.retina-sprite(sprite.$ico-rating-group, sprite.$ico-rating-group-3x);
+	&__bar {
+		@include sprite.retina-sprite(sprite.$ico-rating-bar-group, sprite.$ico-rating-bar-group-3x);
+	}
+}
+
+// toggle
+.toggle {
+	display: flex;
+	align-items: center;
+	gap: 0.8rem;
+	&__text {
+		color: variables.$tertiary-color;
+		font-size: 1.4rem;
+		line-height: 2.6rem;
+	}
+	
+	input[type='checkbox'] {
+		position: relative;
+		width: 3.6rem;
+		height: 2rem;
+		background: none;
+		border-radius: 1.2rem;
+		background-color: #CCCCD1;
+		&:before {
+			content: '';
+			display: block;
+			position: absolute;
+			right: 0.2rem;
+			top: 50%;
+			width: 1.6rem;
+			height: 1.6rem;
+			border-radius: 50%;
+			background-color: #fff;
+			@include mixins.translate(0,-50%);
+		}
+		&:checked {
+			background-color: variables.$primary-color;
+			&:before {
+				left: 0.2rem;
+				right: auto;
+			}
+		}
+	}
+}
+
+// progress
+.progress {
+	$self: &;
+	&__total {
+		display: flex;
+		align-items: center;
+		gap: 0.4rem;
+		font-size: 1.6rem;
+		line-height: 2.4rem;
+	}
+	&__current {
+		font-weight: 700;
+		font-size: 2.4rem;
+		line-height: 3.2rem;
+	}
+	&__max {
+		color: variables.$tertiary-color;
+		#{$self}__text {
+			color: #000;
+		}
+	}
+	&__bar {
+		display: flex;
+		height: 1.6rem;
+		border-radius: 0.8rem;
+		background-color: variables.$secondary-color;
+		&:not(:first-child) {
+			margin-top: 1.2rem;
+		}
+		
+		span {
+			height: 100%;
+			border-radius: 0.8rem;
+			background-color: variables.$primary-color;
+			@include mixins.transition(.5s, ease-in-out);
 		}
 	}
 }

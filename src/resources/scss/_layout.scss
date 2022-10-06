@@ -1,4 +1,5 @@
 @use 'variables';
+@use 'sprite/sprite';
 
 // body background
 .floor {
@@ -6,6 +7,22 @@
   touch-action: pan-x pan-y;
 	&--white {
 		background-color: #fff;
+	}
+	&--black {
+		background-color: #000;
+
+		.header {
+			$self: '.' + header;
+			&__title {
+				color: #fff;
+				#{$self}__unit {
+					opacity: .5;
+				}
+			}
+			&__back {
+				@include sprite.retina-sprite(sprite.$ico-back-white-group, sprite.$ico-back-white-group-3x);
+			}
+		}
 	}
 }
 

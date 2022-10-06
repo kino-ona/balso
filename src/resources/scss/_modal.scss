@@ -2,14 +2,211 @@
 @use 'sprite/sprite';
 
 // modal
+[id^="modal-"]{
+	display:none;
+	z-index:20;
+	position:fixed;
+	top:0;
+	left:0;
+	&, &:before{
+			width:100%;
+			height:100vh;
+			height:-webkit-fill-available;
+	}
+	&:before{
+			content:'';
+			position:absolute;
+			top:0;
+			left:0; 
+			background-color:rgba(0,0,0,.6);
+	}
+	.wrap{
+			width:auto;z-index:1;
+			position:absolute;
+			left:4rem;
+			right:4rem;
+			top:50%;
+			background-color:#fff;
+			text-align:left;
+			transform:translate(0, -50%);
+			transition:all .35s linear;
+			border-radius:2rem;
+			.content {
+					padding:3rem 2rem 2rem;
+					text-align:center;
+					font-size:1.8rem;
+					.ly-tit {
+							display:block;
+							margin-bottom:1rem;
+							font-size:1.6rem;
+							font-weight:700;
+							color:#111;    
+					}
+					.ly-con-txt {
+							font-size:px(14);
+							line-height:2rem;
+							color:#666666;
+					}
+			}
+			.btn-wrap {
+					padding:0 2rem 2rem;
+			}
+	}
+	&.show {
+			.wrap {
+					opacity:1;
+			}
+	}
+	&[data-modal] {
+			display:block !important;
+			bottom:0;top:auto;
+			z-index:9;
+			transform: translateY(100vh);
+			transition-delay: .35s;
+			&:before{
+					position:fixed;
+					opacity:0;
+					top:auto;
+					bottom:0;
+			}
+			.wrap{
+					opacity:0;
+					top:auto;bottom:0;
+					transition-property: all;
+					transition-timing-function: ease;
+					transition-duration: .35s;
+					transform: translateY(100%);
+			}
+			&.ndim{
+					left:0;
+			}
+			&.show{
+					transform: translateY(0);
+					transition-delay: 0s;
+					&:before, .shwBtn{
+							opacity:1;
+					}
+					.wrap{
+							opacity:1;
+							transform: translateY(0);
+					}
+					will-change: transform;
+			}
+	}
+	&.ly-alert {
+			.wrap {
+					margin:0 auto;
+					// max-width:38rem;
+			}
+			&[data-modal="up"]{
+					.wrap{
+							bottom:auto;
+							top:50%;
+							transform: translate(0, -60px);
+					}
+					&.show{
+							.wrap{
+									transform: translate(0, -50%);
+							}
+					}
+			}
+	}
+	&.ly-btm{
+			display:block !important;
+			bottom:0;top:auto;
+			z-index:11;
+			transform:translateY(100vh);
+			transition-delay:.35s;
+			&:before, .shwBtn{
+					position:fixed;
+					opacity:0;
+					top:auto;
+					bottom:0;
+			}
+			.wrap{
+					opacity:0;
+					top:auto;bottom:0;left:0;width:100%;
+					border-radius:0;
+					border-top-left-radius:1.2rem;
+					border-top-right-radius:1.2rem;
+					transition-property:all;
+					transition-timing-function:ease;
+					transition-duration:.35s;
+					transform:translateY(100%);
+					.content {
+							padding:px(30) 2rem px(30);
+							text-align:left;
+							.ly-tit {
+									font-size:2rem;
+							}
+					}
+					.btn-wrap {
+							padding:0 1.6rem 1.6rem;
+					}
+			}
+			&.ndim{
+					left:0;
+			}
+			&.show{
+					transform:translateY(0);
+					transition-delay:0s;
+					&:before, .shwBtn{
+							opacity:1;
+					}
+					.wrap{
+							opacity:1;
+							transform:translateY(0);
+					}
+					will-change:transform;
+			}
+	}
+	&.ly-toast {
+			&:before {
+					background-color:transparent;
+			}
+			.wrap{
+					bottom:3rem;
+					text-align:center;
+					background-color:transparent;
+			}
+			.content{
+					display:inline-block;
+					width:calc(100% - 100px);
+					padding-top:1rem;
+					padding-bottom:1rem;
+					border:.1rem solid #000;
+					box-shadow:0 px(4) px(8) rgb(0,0,0, 10%);
+					text-align:center;
+					border-radius:2rem;
+					p {
+							margin-bottom:0;
+							font-size:1.4rem;
+					}
+			}
+	}
+}
+
 .modal {
 	$self: &;
+	display: none;
 	position: fixed;
+	width: 100%;
+	height: 100%;
 	left: 0;
 	top: 0;
-	right: 0;
-	bottom: 0;
-	z-index: 150;
+	// right: 0;
+	// bottom: 0;
+	// z-index: 150;
+	&:before {
+		content: '';
+		display: block;
+		position: absolute;
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		background-color: rgba(0,0,0,.6);
+	}
 	&__container {
 		display: flex;
 		flex-direction: column;
@@ -31,9 +228,17 @@
 	}
 	&__body {
 		position: relative;
+		left: 0;
+		top: 50%;
 		width: calc(100% - 8rem);
 		border-radius: 2rem;
 		background-color: #fff;
+		&.show {
+			
+			.wrap {
+					opacity:1;
+			}
+		}
 	}
 	&__contents {
 		padding: 3.2rem 2rem 2rem;

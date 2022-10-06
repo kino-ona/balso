@@ -3,8 +3,8 @@
 	"webroot": "../"
 })
 </head>
-<body class="floor"><!-- 모달 오픈 시 body에 scrolllock class 전달 -->
-	<div class="wrap">
+<body class="floor">
+	<div id="wrap">
 		<header class="header">
 			<div class="header__row">
 				<a href="#" class="header__back">
@@ -12,7 +12,7 @@
 				</a>
 				<h1 class="header__title">걸음 수 적립방법</h1>
 				<div class="header__right">
-					<span class="flag">10분 남음</span>
+					<span class="flag">마감 10분전</span>
 				</div>
 			</div>
 		</header>
@@ -97,28 +97,33 @@
 		</div>
 	</div>
 
-	<div class="modal" aria-hidden="false">
-		<div class="modal__container">
-			<div class="modal__dimmed" aria-hidden="true"></div>
-			<div class="modal__body">
-				<div class="modal__contents">
-					<div class="modal__ico modal__ico--complete">
-						<i></i>
-					</div>
-					<p class="title">인증완료!</p>
-					<p class="desc desc--tertiary-color">집계가 완료되면 알려드릴게요!</p>
-					<p class="desc desc--tertiary-color">
-						기다리는 동안 1천 걸음 걷고<br>
-						<span class="desc__weight-black">5,000C</span> 받아볼까요?
-					</p>
-					<div class="button">
-						<div class="button__row">
-							<button type="button" class="button__item modal__close">최대 5,000c 받기</button>
-						</div>
+	<div id="modal-success" class="modal ly-alert" data-modal="up">
+    <div class="wrap">        
+			<div class="content modal__contents">
+				<div class="modal__ico modal__ico--complete">
+					<i></i>
+				</div>
+				<p class="title">인증완료!</p>
+				<p class="desc desc--tertiary-color">집계가 완료되면 알려드릴게요!</p>
+				<p class="desc desc--tertiary-color">
+					기다리는 동안 1천 걸음 걷고<br>
+					<span class="desc__weight-black">5,000C</span> 받아볼까요?
+				</p>
+				<div class="button">
+					<div class="button__row">
+						<button type="button" class="button__item modal__close" onclick="UI.popupClose.init('success');">최대 5,000c 받기</button>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+</div>
 </body>
+
+<script>
+	window.addEventListener('DOMContentLoaded', function(){
+			UI.popupOpen.init('success');
+	});
+</script>
+
 </html>

@@ -4,9 +4,6 @@
 // contents
 .contents {
 	$self: &;
-	display: flex;
-	flex-direction: column;
-	row-gap: 4rem;
 	padding: 6.4rem 0 0;
 	&__separate {
 		padding: 0 calc(constant(safe-area-inset-right) + 2.4rem) 0 calc(constant(safe-area-inset-left) + 2.4rem);
@@ -15,29 +12,29 @@
 			padding-bottom: calc(constant(safe-area-inset-bottom) + 4rem);
 			padding-bottom: calc(env(safe-area-inset-bottom) + 4rem);
 		}
+		#{$self}__card {
+			padding: 3.2rem 2.4rem;
+			border-radius: 2rem;
+			background-color: #fff;
+			&:not(:first-child) {
+				margin-top: 2rem;
+			}
+			#{$self}__group {
+				&:not(:first-child) {
+					margin-top: 4rem;
+				}
+			}
+
+			> .flag {
+				&:first-child {
+					margin-bottom: 1.2rem;
+				}
+			}
+		}
 
 		> .button {
 			&:not(:first-child) {
 				margin-top: 2.8rem;
-			}
-		}
-	}
-	&__card {
-		padding: 3.2rem 2.4rem;
-		border-radius: 2rem;
-		background-color: #fff;
-		&:not(:first-child) {
-			margin-top: 2rem;
-		}
-		#{$self}__group {
-			&:not(:first-child) {
-				margin-top: 4rem;
-			}
-		}
-
-		> .flag {
-			&:first-child {
-				margin-bottom: 1.2rem;
 			}
 		}
 	}
@@ -46,6 +43,9 @@
 		padding: 4rem calc(env(safe-area-inset-right) + 2.4rem) calc(env(safe-area-inset-bottom) + 4rem) calc(env(safe-area-inset-left) + 2.4rem);
 		border-radius: 3.6rem 3.6rem 0 0;
 		background-color: #fff;
+		&:not(:first-child) {
+			margin-top: 4rem;
+		}
 
 		.title {
 			&:not(:last-child) {

@@ -3,8 +3,8 @@
 	"webroot": "../"
 })
 </head>
-<body class="floor scrolllock"><!-- 모달 오픈 시 body에 scrolllock class 전달 -->
-	<div class="wrap">
+<body class="floor">
+	<div id="wrap">
 		<header class="header">
 			<div class="header__row">
 				<a href="#" class="header__back">
@@ -12,7 +12,7 @@
 				</a>
 				<h1 class="header__title">걸음 수 적립방법</h1>
 				<div class="header__right">
-					<span class="flag">10분 남음</span>
+					<span class="flag">마감 10분전</span>
 				</div>
 			</div>
 		</header>
@@ -120,5 +120,33 @@
 			</div>
 		</div>
 	</div>
+
+	<div id="modal-confirm" class="modal ly-alert" data-modal="up">
+    <div class="wrap">        
+			<div class="content modal__contents">
+				<p class="title title--secondary">인증 완료하기</p>
+				<p class="desc desc--tertiary-color">
+					아직 인증이 완료되지 않았어요!<br>
+					완료하기를 눌러 인증을 완료할까요?
+				</p>
+				<p class="desc desc--secondary desc--tertiary-color">* 중단시 업로드한 정보가 모두 삭제돼요</p>
+				<div class="button">
+					<div class="button__row">
+						<button type="button" class="button__item modal__close" onclick="UI.popupClose.init('confirm');">완료하기</button>
+					</div>
+					<div class="button__row">
+						<button type="button" class="button__item button__item--quaternary modal__close" onclick="UI.popupClose.init('confirm');">중단</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
+
+<script>
+	window.addEventListener('DOMContentLoaded', function(){
+			UI.popupOpen.init('confirm');
+	});
+</script>
+
 </html>

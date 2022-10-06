@@ -3,8 +3,8 @@
 	"webroot": "../"
 })
 </head>
-<body class="floor scrolllock"><!-- 모달 오픈 시 body에 scrolllock class 전달 -->
-	<div class="wrap">
+<body class="floor">
+	<div id="wrap">
 		<header class="header">
 			<div class="header__row">
 				<a href="#" class="header__back">
@@ -66,21 +66,25 @@
 		</div>
 	</div>
 
-	<div class="modal" aria-hidden="false">
-		<div class="modal__container">
-			<div class="modal__dimmed" aria-hidden="true"></div>
-			<div class="modal__body">
-				<div class="modal__contents">
-					<p class="title title--secondary">걸음 수 확인중</p>
-					<p class="desc desc--tertiary-color">확인이 완료되면 알려드릴게요!</p>
-					<div class="button">
-						<div class="button__row">
-							<button type="button" class="button__item modal__close">확인</button>
-						</div>
+	<div id="modal-check" class="modal ly-alert" data-modal="up">
+    <div class="wrap">        
+			<div class="content modal__contents">
+				<p class="title title--secondary">걸음 수 확인중</p>
+				<p class="desc desc--tertiary-color">확인이 완료되면 알려드릴게요!</p>
+				<div class="button">
+					<div class="button__row">
+						<button type="button" class="button__item modal__close" onclick="UI.popupClose.init('check');">확인</button>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </body>
+
+<script>
+	window.addEventListener('DOMContentLoaded', function(){
+			UI.popupOpen.init('check');
+	});
+</script>
+
 </html>

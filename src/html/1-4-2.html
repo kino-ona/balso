@@ -3,28 +3,34 @@
 	"webroot": "../"
 })
 </head>
-<body class="floor scrolllock"><!-- 모달 오픈 시 body에 scrolllock class 전달 -->
-	<div class="modal" aria-hidden="false">
-		<div class="modal__container">
-			<div class="modal__dimmed" aria-hidden="true"></div>
-			<div class="modal__body">
-				<div class="modal__contents">
-					<div class="modal__ico modal__ico--empty">
-						<i></i>
+<body class="floor">
+	<div id="wrap"></div>
+	
+	<div id="modal-empty" class="modal ly-alert" data-modal="up">
+    <div class="wrap">        
+			<div class="content modal__contents">
+				<div class="modal__ico modal__ico--empty">
+					<i></i>
+				</div>
+				<p class="title">더이상 봉투가 없어요</p>
+				<p class="desc desc--tertiary-color">챌린지에 참여하면 봉투를 받을 수 있어요!</p>
+				<div class="button">
+					<div class="button__row">
+						<button type="button" class="button__item modal__close" onclick="UI.popupClose.init('empty');">보너스 봉투 받기</button>
 					</div>
-					<p class="title">더이상 봉투가 없어요</p>
-					<p class="desc desc--tertiary-color">챌린지에 참여하면 봉투를 받을 수 있어요!</p>
-					<div class="button">
-						<div class="button__row">
-							<button type="button" class="button__item modal__close">보너스 봉투 받기</button>
-						</div>
-						<div class="button__row">
-							<button type="button" class="button__item button__item--quaternary modal__close">취소</button>
-						</div>
+					<div class="button__row">
+						<button type="button" class="button__item button__item--quaternary modal__close" onclick="UI.popupClose.init('empty');">취소</button>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </body>
+
+<script>
+	window.addEventListener('DOMContentLoaded', function(){
+			UI.popupOpen.init('empty');
+	});
+</script>
+
 </html>
