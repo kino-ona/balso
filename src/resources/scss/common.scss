@@ -9,6 +9,7 @@
 @use 'icons';
 @use 'modal';
 @use 'bullet';
+@use 'accordion';
 @use 'components';
 @use 'swiper';
 @use 'layout';
@@ -68,12 +69,12 @@
 			margin-top: 1.2rem;
 			#{$self}__list {
 				display: grid;
-				grid-template-columns: 1fr 1fr 1fr;
+				grid-template-columns: repeat(3, 1fr);
+				grid-auto-rows: calc((100vw - 5.6rem) / 3);
 				gap: 0.4rem;
 			}
 			#{$self}__item {
 				position: relative;
-				height: calc((100vw - 5.6rem) / 3);
 				clip-path: inset(0 round 1.6rem);
 
 				input[type='radio'] {
@@ -185,6 +186,7 @@
 		}
 
 		.overlap {
+			$overlap: '.' + overlap;
 			&__row {
 				gap: 1.2rem;
 			}
@@ -219,7 +221,6 @@
 			&__figcaption {
 				display: flex;
 				flex-direction: column-reverse;
-				gap: 0.4rem;
 				position: relative;
 				height: 100%;
 				padding: 1.6rem 1.5rem;
@@ -227,12 +228,120 @@
 			}
 			&__id {
 				font-size: 1.2rem;
-				line-height: 1.8rem;
 			}
-			&__kcal {
+			&__text {
 				font-weight: 700;
 				font-size: 1.6rem;
 				line-height: 2.4rem;
+			}
+
+			#{$self}__graybox {
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				height: 100%;
+				padding: 1.6rem;
+
+				#{$overlap}__id {
+					color: variables.$quinary-color;
+				}
+
+				pre {
+					color: variables.$quinary-color;
+					font-weight: 600;
+					font-size: 1.6rem;
+					line-height: 2.4rem;
+					@include mixins.ellipse(5);
+					white-space: pre-line;
+				}
+
+				button {
+					align-self: flex-end;
+					color: variables.$tertiary-color;
+					text-decoration: underline;
+				}
+			}
+		}
+
+		.empty {
+			&__text {
+				color: variables.$tertiary-color;
+				font-weight: 600;
+				font-size: 1.6rem;
+				line-height: 2.4rem;
+				text-align: center;
+			}
+		}
+
+		.agree-challenge {
+			$agree-challenge: '.' + agree-challenge;
+			&__util {
+				display: flex;
+				align-items: center;
+				font-size: 1.6rem;
+			}
+			&__current {
+				margin-right: 0.4rem;
+				color: #000;
+				font-weight: 700;
+				font-size: 2.4rem;
+			}
+			&__max {
+				margin-left: 0.4rem;
+				color: #000;
+				color: variables.$tertiary-color;
+			}
+			&__refresh {
+				margin-left: 0.8rem;
+				@include sprite.retina-sprite(sprite.$ico-refresh-group, sprite.$ico-refresh-group-3x);
+			}
+			&__board {
+				margin-top: 1.2rem;
+				padding: 2rem 2rem 5.6rem;
+				border: 0.1rem solid variables.$stroke;
+				border-radius: 2rem;
+				background-color: variables.$quaternary-color;
+				#{$agree-challenge}__edit {
+					color: variables.$primary-color;
+					font-size: 1.4rem;
+					text-align: right;
+				}
+
+				pre {
+					margin-top: 2rem;
+					color: variables.$tertiary-color;
+					font-size: 1.6rem;
+					line-height: 2.4rem;
+					white-space: pre-line;
+				}
+			}
+
+			.bullet {
+				&:not(:first-child) {
+					margin-top: 4rem;
+				}
+				&__item {
+					font-size: 1.6rem;
+					line-height: 2.4rem;
+					&:not(:first-child) {
+						margin-top: 2rem;
+					}
+				}
+			}
+	
+			.button {
+				&:not(:first-child) {
+					margin-top: 2rem;
+				}
+			}
+		}
+
+		.accordion {
+			&:last-child {
+				margin-bottom: -1.6rem;
+			}
+			&__panel {
+				padding-bottom: 1.6rem;
 			}
 		}
 	}
@@ -301,6 +410,9 @@
 					color: #CCCCD1;
 				}
 			}
+		}
+		#{$self}__graybox {
+			border-radius: 1.2rem;
 		}
 		&--beginning {
 			#{$self}__type {
@@ -373,16 +485,25 @@
 			}
 		}
 	}
-	&__time {
-		display: flex;
-		align-items: baseline;
-		justify-content: center;
-		gap: 1.2rem;
-		#{$self}__count {
+	&__graybox {
+		padding: 2rem;
+		border-radius: 2rem;
+		background-color: variables.$quaternary-color;
+	}
+
+	.time {
+		$time: '.' + time;
+		&__row {
+			display: flex;
+			align-items: baseline;
+			justify-content: center;
+			gap: 1.2rem;
+		}	
+		&__count {
 			display: flex;
 			gap: 0.4rem;
 		}
-		#{$self}__number {
+		&__number {
 			display: flex;
 			align-items: center;
 			justify-content: center;
@@ -394,11 +515,11 @@
 			font-size: 2.4rem;
 			text-align: center;
 		}
-		#{$self}__symbol {
+		&__symbol {
 			font-weight: 700;
 			font-size: 2.4rem;
 		}
-		#{$self}__unit {
+		&__unit {
 			margin-top: 1.2rem;
 			color: variables.$quinary-color;
 			font-size: 1.4rem;
@@ -406,12 +527,95 @@
 			text-align: center;
 		}
 	}
-	&__graybox {
-		padding: 2rem;
-		border-radius: 1.2rem;
-		background-color: variables.$quaternary-color;
+
+	.progress {
+		$progress: '.' + progress;
 		&:not(:first-child) {
 			margin-top: 2.4rem;
+		}
+		&__total {
+			display: flex;
+			align-items: center;
+			gap: 0.4rem;
+			font-size: 1.6rem;
+		}
+		&__current {
+			font-weight: 700;
+			font-size: 2.4rem;
+		}
+		&__max {
+			color: variables.$tertiary-color;
+			#{$progress}__text {
+				color: #000;
+			}
+		}
+		&__bar {
+			display: flex;
+			height: 1.6rem;
+			border-radius: 0.8rem;
+			background-color: variables.$secondary-color;
+			&:not(:first-child) {
+				margin-top: 1.2rem;
+			}
+			
+			span {
+				height: 100%;
+				border-radius: 0.8rem;
+				background-color: variables.$primary-color;
+				@include mixins.transition(.5s, ease-in-out);
+			}
+		}
+		&__donut {
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
+			flex-direction: column;
+			gap: 3px;
+			overflow: hidden;
+			position: relative;
+			width: 300px;
+			height: 150px;
+			padding-bottom: 28px;
+			margin: 0 auto;
+			font-size: 14px;
+			&:after{
+				content: '';
+				display: block;
+				position: absolute;
+				left: 0;
+				top: 0;
+				width: 300px;
+				height: 300px;
+				border: 40px solid;
+				border-color : variables.$secondary-color variables.$secondary-color variables.$primary-color variables.$primary-color;
+				border-radius: 50%;
+				animation: progressCircle 1s ease forwards;
+				@keyframes progressCircle {
+					0%{transform : rotate(-45deg);}
+					100%{transform: rotate(calc(1deg * ( -45 + var(--percentage) * 1.8 )));}
+				}
+			}
+			#{$progress}__percentage {
+				font-weight: 700;
+				font-size: 32px;
+				#{$progress}__unit {
+					font-size: 16px;
+				}
+			}
+			#{$progress}__total {
+				color: variables.$tertiary-color;
+				font-size: 14px;
+			}
+			#{$progress}__current {
+				color: #000;
+				font-size: inherit;
+			}
+		}
+
+		.button {
+			&:not(:first-child) {
+				margin-top: 1.2rem;
+			}
 		}
 	}
 
@@ -511,9 +715,13 @@
 
 	.auth-day {
 		$authday: '.' + auth-day;
+		&:not(:first-child) {
+			margin-top: 2rem;
+		}
 		&__row {
 			display: flex;
-			justify-content: space-evenly;
+			gap: 2.4rem;
+			overflow-x: auto;
 		}
 		&__item {
 			display: flex;
@@ -553,6 +761,196 @@
 					background-color: variables.$primary-color;
 					color: #fff;
 				}
+			}
+		}
+		&--complete {
+			#{$authday}__row {
+				gap: 0.8rem;
+			}
+			#{$authday}__item {
+				flex: none;
+				width: 7.2rem;
+			}
+		}
+	}
+
+	.race {
+		$race: '.' + race;
+		&__list {
+			&:not(:first-child) {
+				margin-top: 2.4rem;
+			}
+		}
+		&__item {
+			&:not(:first-child) {
+				margin-top: 1.6rem;
+			}
+			#{$race}__group {
+				display: flex;
+				align-items: center;
+				gap: 0.4rem;
+				&:not(:first-child) {
+					margin-top: 0.8rem;
+				}
+			}
+		}
+
+		.flexbox {
+			&:not(:last-child) {
+				margin-bottom: 0.8rem;
+			}
+		}
+	}
+
+	.member {
+		$member: '.' + member;
+		&:not(:first-child) {
+			margin-top: 2.4rem;
+		}
+		&__header {
+			&:not(:last-child) {
+				margin-bottom: 2rem;
+			}
+		}
+		&__title {
+			font-weight: 600;
+			font-size: 1.6rem;
+			line-height: 2.6rem;
+		}
+		&__item {
+			&:not(:first-child) {
+				#{$member}__row {
+					padding-top: 1.2rem;
+					border-top: 0.1rem solid variables.$stroke;
+				}
+			}
+			&:not(:last-child) {
+				padding-bottom: 1.2rem;
+			}
+			#{$member}__row {
+				display: flex;
+				align-items: center;
+				gap: 1.2rem;
+			}
+			#{$member}__figure {
+				flex: none;
+				border-radius: 50%;
+				width: 3.2rem;
+				line-height: 3.2rem;
+			}
+			#{$member}__right {
+				flex: 1;
+				#{$member}__group {
+					display: flex;
+					align-items: center;
+					gap: 0.8rem;
+				}
+			}
+			#{$member}__user {
+				font-weight: 600;
+				font-size: 1.4rem;
+				line-height: 2.4rem;
+			}
+		}
+	}
+
+	.process {
+		$process: '.' + process;
+		&__process {
+			display: flex;
+			justify-content: space-between;
+			position: relative;
+			width: 69.74vw;
+			margin: 0 auto;
+			&:before {
+				content: '';
+				display: block;
+				position: absolute;
+				left: 0;
+				top: 1.5rem;
+				right: 0;
+				height: 0.2rem;
+				background-color: variables.$quaternary-color;
+			}
+			&:after {
+				content: '';
+				display: block;
+				position: absolute;
+				left: 0;
+				top: 1.5rem;
+				height: 0.2rem;
+				background-color: variables.$primary-color;
+			}
+			&--first {
+				#{$process}__item {
+					&:nth-child(1) {
+						#{$process}__circle {
+							background-color: variables.$primary-color;
+							color: #fff;
+						}
+					}
+				}
+			}
+			&--second {
+				&:after {
+					width: 50%;
+				}
+				#{$process}__item {
+					&:nth-child(1),
+					&:nth-child(2) {
+						#{$process}__circle {
+							background-color: variables.$primary-color;
+							color: #fff;
+						}
+					}
+				}
+			}
+			&--third {
+				&:after {
+					width: 100%;
+				}
+				&:nth-child(1),
+				&:nth-child(2),
+				&:nth-child(3) {
+					#{$process}__circle {
+						background-color: variables.$primary-color;
+						color: #fff;
+					}
+				}
+			}
+		}
+		&__item {
+			display: flex;
+			flex-direction: column-reverse;
+			gap: 0.8rem;
+			position: relative;
+			z-index: 1;
+		}
+		&__circle {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 3.2rem;
+			height: 3.2rem;
+			border-radius: 50%;
+			background-color: variables.$quaternary-color;
+			color: variables.$tertiary-color;
+			font-weight: 600;
+			font-size: 1.4rem;
+			line-height: 2.2rem;
+			text-align: center;
+		}
+		&__text {
+			position: absolute;
+			left: 50%;
+			bottom: 0;
+			font-size: 1.4rem;
+			text-align: center;
+			@include mixins.translate(-50%,0);
+		}
+		&--spot {
+			#{$process}__item {
+				padding-bottom: 2.4rem;
 			}
 		}
 	}

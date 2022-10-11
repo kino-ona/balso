@@ -1,0 +1,36 @@
+@use 'variables';
+@use 'sprite/sprite';
+
+// accorion
+.accordion {
+	$self: &;
+	&__trigger {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 1.6rem;
+		#{$self}__title {
+			font-weight: 700;
+			font-size: 1.8rem;
+			line-height: 2.6rem;
+		}
+		#{$self}__arrow {
+			flex-shrink: 0;
+			@include sprite.retina-sprite(sprite.$ico-arrow-down-group, sprite.$ico-arrow-down-group-3x);
+		}
+		&--expanded {
+			#{$self}__arrow {
+				@include sprite.retina-sprite(sprite.$ico-arrow-up-group, sprite.$ico-arrow-up-group-3x);
+			}
+			& + #{$self}__panel {
+				display: block;
+			}
+		}
+	}
+	&__panel {
+		display: none;
+		#{$self}__inner {
+			padding-top: 2.4rem;
+		}
+	}
+}

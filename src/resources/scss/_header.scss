@@ -13,6 +13,7 @@
 	height: 6.4rem;
 	padding: 0 calc(constant(safe-area-inset-right) + 2.4rem) 0 calc(constant(safe-area-inset-left) + 2.4rem);
 	padding: 0 calc(env(safe-area-inset-right) + 2.4rem) 0 calc(env(safe-area-inset-left) + 2.4rem);
+	background-color: variables.$quaternary-color;
 	&__row {
 		display: flex;
 		align-items: center;

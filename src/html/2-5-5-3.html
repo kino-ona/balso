@@ -1,0 +1,117 @@
+@@include('../inc/pagehead.inc', {
+	"pagetitle": "발로소득 - 챌린지 - 일상 챌린지",
+	"webroot": "../"
+})
+</head>
+<body class="floor floor--black">
+	<div id="wrap">
+		<header class="header" data-ui-fixed="top">
+			<div class="header__row">
+				<a href="#" class="header__back">
+					<span class="a11y">이전</span>
+				</a>
+				<h1 class="header__title">
+					인증피드
+					<span class="header__unit">치팅데이 챌린지</span>
+				</h1>
+			</div>
+		</header>
+		<div class="contents">
+			<div class="challenge">
+				<div class="feed">
+					<div class="feed__top">
+						<div class="feed__left">
+							<p class="feed__id">charlieputh99</p>
+							<p class="feed__time">3시간 전</p>
+						</div>
+						<div class="feed__right">
+							<button type="button" class="feed__util" onclick="UI.popupOpen.init('feed-delete');">삭제하기</button>
+						</div>
+					</div>
+					<div class="feed__img">
+						<div class="swiper">
+							<div class="swiper-wrapper">
+								<div class="swiper-slide">
+									<img src="../resources/images/dummy/@feed_cheetingday.png" alt="">
+								</div>
+								<div class="swiper-slide">
+									<img src="../resources/images/dummy/@feed_cheetingday.png" alt="">
+								</div>
+							</div>
+							<div class="swiper-button-prev"></div>
+  						<div class="swiper-button-next"></div>
+						</div>
+					</div>
+					<div class="feed__info">
+						<div class="flexbox">
+							<p class="feed__title">전체 섭취량</p>
+							<p class="feed__title feed__title--secondary">570Kcal</p>
+						</div>
+						<dl class="feed__detail">
+							<div class="feed__row">
+								<dt>식단정보</dt>
+								<dd>치즈 떡볶이, 우유, 김밥, 고구마 튀김</dd>
+							</div>
+							<div class="feed__row">
+								<dt>영양정보</dt>
+								<dd>나트륨 0.2%, 콜레스테롤 3%, 단백질 90%, 탄수화물 10% 섬유소 70%, 무기질 30%, 철분 100%</dd>
+							</div>
+						</dl>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 삭제 팝업 -->
+	<div id="modal-feed-delete" class="modal ly-alert" data-modal="up">
+    <div class="wrap">
+			<div class="content modal__contents">
+				<p class="title title--secondary">삭제할까요?</p>
+				<p class="desc desc--tertiary-color">
+					인증이 무효처리돼요!<br>
+					인증 가능 기간 내 재촬영 가능해요.
+				</p>
+				<div class="button">
+					<div class="button__row">
+						<button type="button" class="button__item modal__close" onclick="UI.popupOpen.init('feed-delete-complete'); UI.popupClose.init('feed-delete');">삭제</button>
+					</div>
+					<div class="button__row">
+						<button type="button" class="button__item button__item--quaternary modal__close" onclick="UI.popupClose.init('feed-delete');">닫기</button>
+					</div>
+				</div>
+			</div>      
+		</div>
+	</div>
+	<!-- // 삭제 팝업 -->
+
+	<!-- 삭제 완료 -->
+	<div id="modal-feed-delete-complete" class="modal ly-alert" data-modal="up">
+    <div class="wrap">        
+			<div class="content modal__contents">
+				<p class="title title--secondary">삭제 되었어요.</p>
+				<p class="desc desc--tertiary-color">인증 가능 기간 내 재촬영 가능해요.</p>
+				<div class="button">
+					<div class="button__row">
+						<button type="button" class="button__item modal__close" onclick="UI.popupClose.init('feed-delete-complete');">확인</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- // 삭제 완료 -->
+</body>
+
+<script type="module">
+	const feedImgSwiper = new Swiper('.feed__img .swiper', {
+		speed: 500,
+		navigation: {
+			nextEl: '.swiper-button-next',
+			prevEl: '.swiper-button-prev',
+		},
+	});
+
+	import {Swiper} from '../resources/js/module/swiper-bundle.esm.browser.min.js';
+</script>
+
+</html>

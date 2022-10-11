@@ -4,7 +4,7 @@
 // contents
 .contents {
 	$self: &;
-	padding: 6.4rem 0 0;
+	// padding: 6.4rem 0 0;
 	&__separate {
 		padding: 0 calc(constant(safe-area-inset-right) + 2.4rem) 0 calc(constant(safe-area-inset-left) + 2.4rem);
 		padding: 0 calc(env(safe-area-inset-right) + 2.4rem) 0 calc(env(safe-area-inset-left) + 2.4rem);

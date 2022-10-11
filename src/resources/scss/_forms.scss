@@ -60,7 +60,21 @@
 		}
 		#{$self}__inner {
 			display: flex;
-			column-gap: 1rem;
+			column-gap: 0.8rem;
+		}
+	}
+	&__roundbox {
+		#{$self}__inner {
+			display: flex;
+			align-items: center;
+			gap: 0.8rem;
+			height: 5.2rem;
+			padding: 0 1.6rem;
+			border: 1px solid variables.$stroke;
+			border-radius: 1.4rem;
+			&:not(:first-child) {
+				margin-top: 0.8rem;
+			}
 		}
 	}
 }

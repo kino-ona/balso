@@ -288,6 +288,12 @@
 				font-weight: 600;
 			}
 		}
+
+		.form {
+			&:not(:first-child) {
+				margin-top: 2rem;
+			}
+		}
 	}
 	&__ico {
 		display: flex;

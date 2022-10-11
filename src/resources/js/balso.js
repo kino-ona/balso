@@ -70,10 +70,12 @@ UI.scrollSet = {
             scrollTop = window.scrollY || document.documentElement.scrollTop;
             this.wrap.style.position = "fixed";
             this.wrap.style.top = -scrollTop + 'px';
+            this.wrap.style.width = 100 + '%'; // 바닥 화면 넓이 늘어짐 추가 이현우
             return scrollTop;
         } else if (mode == "on") { //body scroll 제거 해제
             this.wrap.style.position = "relative";
             this.wrap.style.top = 0;
+            this.wrap.style.width = ''; // 바닥 화면 넓이 늘어짐 추가 이현우
             window.scrollTo({
                 top: scrollTop
             });
@@ -97,7 +99,7 @@ UI.popupOpen = {
 
         // 영역 외 클릭 닫기
         popTarget.addEventListener('click', function(e){
-            e.preventDefault();
+            // e.preventDefault(); 체크버튼 작동안함 이현우
             e.stopPropagation();
             if (!popTarget.classList.contains('ndim')) {
                 const target = e.target;
@@ -140,6 +142,22 @@ UI.popupClose = {
     }
 };
 
+// 아코디언 추가 이현우
+UI.accordion = {
+    init: () => {
+        const accordionHeading = document.querySelectorAll('.accordion__trigger');
+
+		accordionHeading.forEach(item => {
+			item.addEventListener('click', () => { 
+				item.classList.contains('accordion__trigger--expanded') ? 
+				item.classList.remove('accordion__trigger--expanded') :            
+				item.classList.add('accordion__trigger--expanded');
+			});
+		});
+    }
+};
+
 window.addEventListener('DOMContentLoaded', function () {
     if (document.querySelectorAll('[data-ui-fixed]').length) UI.layoutSet.init();
+    if (document.querySelectorAll('.accordion__trigger').length) UI.accordion.init(); // 아코디언 추가 이현우
 });

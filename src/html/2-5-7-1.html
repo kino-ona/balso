@@ -1,0 +1,88 @@
+@@include('../inc/pagehead.inc', {
+	"pagetitle": "발로소득 - 챌린지 - 일상 챌린지 - 인증현황",
+	"webroot": "../"
+})
+</head>
+<body class="floor floor--white">
+	<div id="wrap">
+		<header class="header" data-ui-fixed="top">
+			<div class="header__row">
+				<a href="#" class="header__back">
+					<span class="a11y">이전</span>
+				</a>
+				<h1 class="header__title">인증현황</h1>
+			</div>
+		</header>
+		<div class="contents">
+			<div class="challenge">
+				<div class="challenge__box">
+					<div class="agree-challenge">
+						<div class="agree-challenge__util">
+							<span class="agree-challenge__current">1</span>
+							회 <span class="agree-challenge__max">/ 3회</span>
+							<button type="button" class="agree-challenge__refresh">
+								<span class="a11y">새로고침</span>
+							</button>
+						</div>
+						<div class="agree-challenge__board">
+							<div class="agree-challenge__edit">
+								<button type="button" onclick="UI.popupOpen.init('edit');"">수정</button>
+							</div>
+							<pre>
+1. 아침밥 먹기
+2. 운동하기
+3. 돈 아껴쓰기
+							</pre>
+						</div>
+						<div class="button">
+							<div class="button__row">
+								<button type="button" class="button__item">카카오톡으로 공유하기</button>
+							</div>
+						</div>
+						<div class="bullet">
+							<div class="flexbox">
+								<p class="title title--secondary">인증 기준 안내</p>
+							</div>
+							<ul class="bullet__list">
+								<li class="bullet__item bullet__item--info">
+									<span class="bullet__semibold">공유 횟수는 채팅방 기준이에요.</span>
+									<div class="bullet__separate">
+										<p>
+											ex) 3명이 있는 채팅방에 공유= 1회<br>
+											ex) 동일한 채팅방에 3회 공유= 1회
+										</p>
+									</div>
+								</li>
+								<li class="bullet__item bullet__item--info">
+									<span class="bullet__semibold">나와의 채팅방에 공유시 인정되지않아요.</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="modal-edit" class="modal ly-alert" data-modal="up">
+    <div class="wrap">        
+			<div class="content modal__contents">
+				<p class="desc">
+					<span class="desc__weight-semibold">
+						수정시 기존 인증 내역 및 횟수가 모두 삭제됩니다.<br>
+						그래도 수정 하시겠어요?
+					</span>
+				</p>
+				<div class="button">
+					<div class="button__row">
+						<button type="button" class="button__item modal__close" onclick="UI.popupClose.init('edit');">수정</button>
+					</div>
+					<div class="button__row">
+						<button type="button" class="button__item button__item--quaternary modal__close" onclick="UI.popupClose.init('edit');">유지</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -22,6 +22,11 @@
 	&:not(:last-child) {
 		margin-bottom: 2rem;
 	}
+	&--column {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 0.8rem;
+	}
 }
 
 // flag
@@ -39,6 +44,7 @@
 	line-height: 1.8rem;
 	&--secondary {
 		background-color: variables.$quaternary-color;
+		color: variables.$quinary-color;
 	}
 	&--new {
 		height: 1.6rem;
@@ -312,45 +318,6 @@
 				left: 0.2rem;
 				right: auto;
 			}
-		}
-	}
-}
-
-// progress
-.progress {
-	$self: &;
-	&__total {
-		display: flex;
-		align-items: center;
-		gap: 0.4rem;
-		font-size: 1.6rem;
-		line-height: 2.4rem;
-	}
-	&__current {
-		font-weight: 700;
-		font-size: 2.4rem;
-		line-height: 3.2rem;
-	}
-	&__max {
-		color: variables.$tertiary-color;
-		#{$self}__text {
-			color: #000;
-		}
-	}
-	&__bar {
-		display: flex;
-		height: 1.6rem;
-		border-radius: 0.8rem;
-		background-color: variables.$secondary-color;
-		&:not(:first-child) {
-			margin-top: 1.2rem;
-		}
-		
-		span {
-			height: 100%;
-			border-radius: 0.8rem;
-			background-color: variables.$primary-color;
-			@include mixins.transition(.5s, ease-in-out);
 		}
 	}
 }

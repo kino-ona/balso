@@ -5,7 +5,7 @@
 </head>
 <body class="floor floor--white">
 	<div id="wrap">
-		<header class="header">
+		<header class="header" data-ui-fixed="top">
 			<div class="header__row">
 				<a href="#" class="header__back">
 					<span class="a11y">이전</span>
@@ -23,24 +23,24 @@
 						<div class="challenge__summary">
 							<span class="flag">진행중</span>
 							<p class="title">피트니스 인증 챌린지 I</p>
-						</div>
-						<div class="challenge__graybox">
-							<div class="between-item between-item--secondary">
-								<dl class="between-item__list">
-									<div class="between-item__group">
-										<dt class="between-item__dt">최대소득</dt>
-										<dt class="between-item__dd">
-											<div class="point">
-												<span class="point__mark">C</span>
-												<span class="point__number">5,000</span>
-											</div>
-										</dt>
-									</div>
-									<div class="between-item__group">
-										<dt class="between-item__dt">인센티브</dt>
-										<dt class="between-item__dd">스타벅스 99% 할인쿠폰</dt>
-									</div>
-								</dl>
+							<div class="challenge__graybox">
+								<div class="between-item between-item--secondary">
+									<dl class="between-item__list">
+										<div class="between-item__group">
+											<dt class="between-item__dt">최대소득</dt>
+											<dt class="between-item__dd">
+												<div class="point">
+													<span class="point__mark">C</span>
+													<span class="point__number">5,000</span>
+												</div>
+											</dt>
+										</div>
+										<div class="between-item__group">
+											<dt class="between-item__dt">인센티브</dt>
+											<dt class="between-item__dd">스타벅스 99% 할인쿠폰</dt>
+										</div>
+									</dl>
+								</div>
 							</div>
 						</div>
 						<div class="button">
@@ -63,6 +63,20 @@
 				<div class="challenge__box">
 					<div class="flexbox">
 						<p class="title title--secondary">나의 인증 현황</p>
+					</div>
+					<div class="progress">
+						<!--
+								aria-valuetext = 백분율
+								aria-valuemin  = 최소값
+								aria-valuemax  = 최대값
+							-->
+						<div class="progress__donut" style="--percentage: 56;" aria-valuetext="56%" aria-valuemin="0" aria-valuemax="100">
+							<p class="progress__percentage">56<span class="progress__unit">%</span></p>
+							<p class="progress__total">
+								<span class="progress__current">3회</span>
+								/ 5회
+							</p>
+						</div>
 					</div>
 					<div class="auth-day">
 						<div class="auth-day__row">
@@ -101,29 +115,31 @@
 					<div class="flexbox">
 						<p class="title title--secondary">남은 기간</p>
 					</div>
-					<div class="challenge__time">
-						<div class="challenge__inner">
-							<div class="challenge__count">
-								<span class="challenge__number">0</span>
-								<span class="challenge__number">1</span>
+					<div class="time">
+						<div class="time__row">
+							<div class="time__inner">
+								<div class="time__count">
+									<span class="time__number">0</span>
+									<span class="time__number">1</span>
+								</div>
+								<p class="time__unit">일</p>
 							</div>
-							<p class="challenge__unit">일</p>
-						</div>
-						<div class="challenge__symbol">:</div>
-						<div class="challenge__inner">
-							<div class="challenge__count">
-								<span class="challenge__number">0</span>
-								<span class="challenge__number">3</span>
+							<div class="time__symbol">:</div>
+							<div class="time__inner">
+								<div class="time__count">
+									<span class="time__number">0</span>
+									<span class="time__number">3</span>
+								</div>
+								<p class="time__unit">시간</p>
 							</div>
-							<p class="challenge__unit">시간</p>
-						</div>
-						<div class="challenge__symbol">:</div>
-						<div class="challenge__inner">
-							<div class="challenge__count">
-								<span class="challenge__number">2</span>
-								<span class="challenge__number">5</span>
+							<div class="time__symbol">:</div>
+							<div class="time__inner">
+								<div class="time__count">
+									<span class="time__number">2</span>
+									<span class="time__number">5</span>
+								</div>
+								<p class="time__unit">분</p>
 							</div>
-							<p class="challenge__unit">분</p>
 						</div>
 					</div>
 				</div>
@@ -133,7 +149,7 @@
 						<div class="toggle">
 							<p class="toggle__text">내 인증글만 보기</p>
 							<div class="toggle__button">
-								<input type="checkbox" id="toggle01">
+								<input type="checkbox" id="toggle01" checked>
 								<label for="toggle01" class="a11y">내 인증글만 보기</label>
 							</div>
 						</div>
@@ -168,7 +184,65 @@
 					</div>
 				</div>
 				<div class="challenge__box">
-
+					<dl class="accordion">
+						<dt class="accordion__trigger">
+							<span class="accordion__title">챌린지 안내</span>
+							<i class="accordion__arrow"></i>
+						</dt>
+						<dd class="accordion__panel">
+							<div class="accordion__inner">
+								<div class="between-item">
+									<dl class="between-item__list">
+										<div class="between-item__group">
+											<dt class="between-item__dt">챌린지 내용</dt>
+											<dd class="between-item__dd">피트니스 인증 챌린지</dd>
+										</div>
+										<div class="between-item__group">
+											<dt class="between-item__dt">인증 방법</dt>
+											<dd class="between-item__dd">9일동안 3일 이상 운동하는 인증샷 인증 방법 최대 2줄까지</dd>
+										</div>
+										<div class="between-item__group">
+											<dt class="between-item__dt">소득 기준</dt>
+											<dd class="between-item__dd">
+												<div class="group">
+													1번째 최대 소득 금액<br>
+													<span class="desc desc--secondary desc--secondary-color">1번 째 소득 기준</span>
+												</div>
+												<div class="group">
+													N번째 최대 소득 금액<br>
+													<span class="desc desc--secondary desc--secondary-color">N번째 소득 기준</span>
+												</div>
+											</dd>
+										</div>
+										<div class="between-item__group">
+											<dt class="between-item__dt">참가비</dt>
+											<dd class="between-item__dd">일상 지원금 1,500P</dd>
+										</div>
+										<div class="between-item__group">
+											<dt class="between-item__dt">진행 기간</dt>
+											<dd class="between-item__dd">2022.11.01 - 2022.11.11</dd>
+										</div>
+										<div class="between-item__group">
+											<dt class="between-item__dt">모집 기간</dt>
+											<dd class="between-item__dd">2022.11.01</dd>
+										</div>
+										<div class="between-item__group">
+											<dt class="between-item__dt">모집 인원</dt>
+											<dd class="between-item__dd">500 / 10,000</dd>
+										</div>
+										<div class="between-item__group">
+											<dt class="between-item__dt">예상 난이도</dt>
+											<dd class="between-item__dd">
+												<div class="rating">
+													<div class="rating__bar" aria-label="Lv 3" style="width: 60%;"></div>
+												</div>
+											</dd>
+										</div>
+									</dl>
+								</div>
+							</div>
+						</dd>
+					</dl>
 				</div>
 				<div class="challenge__box">
 					<div class="button">
