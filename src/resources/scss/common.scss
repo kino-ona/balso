@@ -47,7 +47,7 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			gap: 0.4rem;
+			grid-gap: 0.4rem;
 		}
 	}
 	&__upload {
@@ -71,7 +71,7 @@
 				display: grid;
 				grid-template-columns: repeat(3, 1fr);
 				grid-auto-rows: calc((100vw - 5.6rem) / 3);
-				gap: 0.4rem;
+				grid-gap: 0.4rem;
 			}
 			#{$self}__item {
 				position: relative;
@@ -188,7 +188,7 @@
 		.overlap {
 			$overlap: '.' + overlap;
 			&__row {
-				gap: 1.2rem;
+				grid-gap: 1.2rem;
 			}
 			&__item {
 				flex: none;
@@ -374,7 +374,7 @@
 			}
 			#{$self}__row {
 				display: flex;
-				gap: 1.2rem;
+				grid-gap: 1.2rem;
 				&:not(:first-child) {
 					margin-top: 1.6rem;
 				}
@@ -497,11 +497,11 @@
 			display: flex;
 			align-items: baseline;
 			justify-content: center;
-			gap: 1.2rem;
+			grid-gap: 1.2rem;
 		}	
 		&__count {
 			display: flex;
-			gap: 0.4rem;
+			grid-gap: 0.4rem;
 		}
 		&__number {
 			display: flex;
@@ -536,7 +536,7 @@
 		&__total {
 			display: flex;
 			align-items: center;
-			gap: 0.4rem;
+			grid-gap: 0.4rem;
 			font-size: 1.6rem;
 		}
 		&__current {
@@ -570,7 +570,7 @@
 			align-items: center;
 			justify-content: flex-end;
 			flex-direction: column;
-			gap: 3px;
+			grid-gap: 3px;
 			overflow: hidden;
 			position: relative;
 			width: 300px;
@@ -682,7 +682,7 @@
 
 			.flexbox {
 				justify-content: flex-start;
-				gap: 0.8rem;
+				grid-gap: 0.8rem;
 			}
 		}
 		&__title {
@@ -720,14 +720,14 @@
 		}
 		&__row {
 			display: flex;
-			gap: 2.4rem;
+			grid-gap: 2.4rem;
 			overflow-x: auto;
 		}
 		&__item {
 			display: flex;
 			flex-direction: column;
 			align-items: center;
-			gap: 0.8rem;
+			grid-gap: 0.8rem;
 			#{$authday}__day {
 				font-size: 1.4rem;
 				line-height: 2.2rem;
@@ -765,7 +765,7 @@
 		}
 		&--complete {
 			#{$authday}__row {
-				gap: 0.8rem;
+				grid-gap: 0.8rem;
 			}
 			#{$authday}__item {
 				flex: none;
@@ -788,7 +788,7 @@
 			#{$race}__group {
 				display: flex;
 				align-items: center;
-				gap: 0.4rem;
+				grid-gap: 0.4rem;
 				&:not(:first-child) {
 					margin-top: 0.8rem;
 				}
@@ -830,7 +830,7 @@
 			#{$member}__row {
 				display: flex;
 				align-items: center;
-				gap: 1.2rem;
+				grid-gap: 1.2rem;
 			}
 			#{$member}__figure {
 				flex: none;
@@ -843,7 +843,7 @@
 				#{$member}__group {
 					display: flex;
 					align-items: center;
-					gap: 0.8rem;
+					grid-gap: 0.8rem;
 				}
 			}
 			#{$member}__user {
@@ -922,7 +922,7 @@
 		&__item {
 			display: flex;
 			flex-direction: column-reverse;
-			gap: 0.8rem;
+			grid-gap: 0.8rem;
 			position: relative;
 			z-index: 1;
 		}

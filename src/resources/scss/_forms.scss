@@ -53,21 +53,22 @@
 	&__check {
 		display: flex;
 		flex-wrap: wrap;
-		column-gap: 3.5rem;
-		row-gap: 1.2rem;
+		// grid-column-gap: 3.5rem;
+		// grid-row-gap: 1.2rem;
+		grid-gap: 1.2rem 3.5rem;
 		&:not(:first-child) {
 			margin-top: 2.5rem;
 		}
 		#{$self}__inner {
 			display: flex;
-			column-gap: 0.8rem;
+			grid-gap: 0.8rem;
 		}
 	}
 	&__roundbox {
 		#{$self}__inner {
 			display: flex;
 			align-items: center;
-			gap: 0.8rem;
+			grid-gap: 0.8rem;
 			height: 5.2rem;
 			padding: 0 1.6rem;
 			border: 1px solid variables.$stroke;

@@ -25,7 +25,7 @@
 	&--column {
 		flex-direction: column;
 		align-items: flex-start;
-		gap: 0.8rem;
+		grid-gap: 0.8rem;
 	}
 }
 
@@ -59,7 +59,7 @@
 	display: inline-flex;
 	align-items: center;
 	justify-content: center;
-	gap: 0.4rem;
+	grid-gap: 0.4rem;
 	&__mark {
 		display: inline-flex;
 		align-items: center;
@@ -92,7 +92,7 @@
 .overlap {
 	&__row {
 		display: flex;
-		gap: 0.8rem;
+		grid-gap: 0.8rem;
 		overflow-x: auto;
 		margin: 0 -2.4rem;
 		padding: 0 2.4rem;
@@ -140,7 +140,7 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
-		gap: 1.2rem;
+		grid-gap: 1.2rem;
 		position: absolute;
 		left: -1px;
 		top: -1px;
@@ -159,7 +159,7 @@
 	&__file {
 		display: flex;
 		flex-direction: column;
-		gap: 1.2rem;
+		grid-gap: 1.2rem;
 		#{$self}__text {
 			color: variables.$senary-color;
 			font-size: 1.4rem;
@@ -199,7 +199,7 @@
 	&__change {
 		display: flex;
 		align-items: center;
-		gap: 0.8rem;
+		grid-gap: 0.8rem;
 		font-size: 1.4rem;
 		line-height: 1.6rem;
 
@@ -286,7 +286,7 @@
 .toggle {
 	display: flex;
 	align-items: center;
-	gap: 0.8rem;
+	grid-gap: 0.8rem;
 	&__text {
 		color: variables.$tertiary-color;
 		font-size: 1.4rem;
