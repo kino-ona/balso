@@ -335,7 +335,11 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			grid-gap: 0.4rem;
+			// grid-gap: 0.4rem;
+
+			.point {
+				margin: 0 0.4rem;
+			}
 		}
 	}
 }

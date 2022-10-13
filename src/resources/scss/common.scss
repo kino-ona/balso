@@ -47,7 +47,13 @@
 			display: flex;
 			align-items: center;
 			justify-content: center;
-			grid-gap: 0.4rem;
+			// grid-gap: 0.4rem;
+
+			> span {
+				&:not(:first-child) {
+					margin-left: 0.4rem;
+				}
+			}
 		}
 	}
 	&__upload {
@@ -100,6 +106,7 @@
 					display: block;
 					position: relative;
 					height: 100%;
+					margin-left: 0;
 
 					img {
 						width: 100%;
@@ -187,14 +194,17 @@
 
 		.overlap {
 			$overlap: '.' + overlap;
-			&__row {
-				grid-gap: 1.2rem;
-			}
+			// &__row {
+			// 	grid-gap: 1.2rem;
+			// }
 			&__item {
 				flex: none;
 				position: relative;
 				width: 41.03vw;
 				height: 51.28vw;
+				&:not(:first-child) {
+					margin-left: 1.2rem;
+				}
 			}
 			&__figure {
 				position: absolute;
@@ -373,7 +383,9 @@
 				margin-top: 2rem;
 			}
 			#{$self}__row {
-				display: flex;
+				// display: flex;
+				display: grid;
+				grid-template-columns: 24px 1fr;
 				grid-gap: 1.2rem;
 				&:not(:first-child) {
 					margin-top: 1.6rem;
@@ -497,11 +509,15 @@
 			display: flex;
 			align-items: baseline;
 			justify-content: center;
-			grid-gap: 1.2rem;
+			// grid-gap: 1.2rem;
+
+			> * {
+				margin: 0 0.6rem;
+			}
 		}	
 		&__count {
 			display: flex;
-			grid-gap: 0.4rem;
+			// grid-gap: 0.4rem;
 		}
 		&__number {
 			display: flex;
@@ -514,6 +530,9 @@
 			font-weight: 700;
 			font-size: 2.4rem;
 			text-align: center;
+			&:not(:first-child) {
+				margin-left: 0.4rem;
+			}
 		}
 		&__symbol {
 			font-weight: 700;
@@ -536,7 +555,7 @@
 		&__total {
 			display: flex;
 			align-items: center;
-			grid-gap: 0.4rem;
+			// grid-gap: 0.4rem;
 			font-size: 1.6rem;
 		}
 		&__current {
@@ -545,6 +564,7 @@
 		}
 		&__max {
 			color: variables.$tertiary-color;
+			margin-left: 0.4rem;
 			#{$progress}__text {
 				color: #000;
 			}
@@ -570,7 +590,7 @@
 			align-items: center;
 			justify-content: flex-end;
 			flex-direction: column;
-			grid-gap: 3px;
+			// grid-gap: 3px;
 			overflow: hidden;
 			position: relative;
 			width: 300px;
@@ -598,6 +618,9 @@
 			#{$progress}__percentage {
 				font-weight: 700;
 				font-size: 32px;
+				&:not(:last-child) {
+					margin-bottom: 3px;
+				}
 				#{$progress}__unit {
 					font-size: 16px;
 				}
@@ -609,6 +632,7 @@
 			#{$progress}__current {
 				color: #000;
 				font-size: inherit;
+				margin-right: 4px;
 			}
 		}
 
@@ -682,10 +706,11 @@
 
 			.flexbox {
 				justify-content: flex-start;
-				grid-gap: 0.8rem;
+				// grid-gap: 0.8rem;
 			}
 		}
 		&__title {
+			margin-right: 0.8rem;
 			font-weight: 700;
 			font-size: 1.8rem;
 			line-height: 2.6rem;
@@ -720,14 +745,17 @@
 		}
 		&__row {
 			display: flex;
-			grid-gap: 2.4rem;
+			// grid-gap: 2.4rem;
 			overflow-x: auto;
 		}
 		&__item {
 			display: flex;
 			flex-direction: column;
 			align-items: center;
-			grid-gap: 0.8rem;
+			// grid-gap: 0.8rem;
+			&:not(:first-child) {
+				margin-left: 2.4rem;
+			}
 			#{$authday}__day {
 				font-size: 1.4rem;
 				line-height: 2.2rem;
@@ -764,12 +792,15 @@
 			}
 		}
 		&--complete {
-			#{$authday}__row {
-				grid-gap: 0.8rem;
-			}
+			// #{$authday}__row {
+			// 	grid-gap: 0.8rem;
+			// }
 			#{$authday}__item {
 				flex: none;
 				width: 7.2rem;
+				&:not(:first-child) {
+					margin-left: 0.8rem;
+				}
 			}
 		}
 	}
@@ -788,9 +819,15 @@
 			#{$race}__group {
 				display: flex;
 				align-items: center;
-				grid-gap: 0.4rem;
+				// grid-gap: 0.4rem;
 				&:not(:first-child) {
 					margin-top: 0.8rem;
+				}
+
+				.title {
+					&:not(:last-child) {
+						margin-right: 0.4rem;
+					}
 				}
 			}
 		}
@@ -830,12 +867,13 @@
 			#{$member}__row {
 				display: flex;
 				align-items: center;
-				grid-gap: 1.2rem;
+				// grid-gap: 1.2rem;
 			}
 			#{$member}__figure {
 				flex: none;
-				border-radius: 50%;
 				width: 3.2rem;
+				margin-right: 1.2rem;
+				border-radius: 50%;
 				line-height: 3.2rem;
 			}
 			#{$member}__right {
@@ -843,7 +881,11 @@
 				#{$member}__group {
 					display: flex;
 					align-items: center;
-					grid-gap: 0.8rem;
+					// grid-gap: 0.8rem;
+
+					.flag {
+						margin-left: 0.8rem;
+					}
 				}
 			}
 			#{$member}__user {
@@ -922,7 +964,6 @@
 		&__item {
 			display: flex;
 			flex-direction: column-reverse;
-			grid-gap: 0.8rem;
 			position: relative;
 			z-index: 1;
 		}

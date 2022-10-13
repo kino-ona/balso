@@ -3,6 +3,7 @@
 
 .form {
 	$self: &;
+	overflow: hidden;
 	&:not(:first-child) {
 		margin-top: 4rem;
 	}
@@ -55,20 +56,26 @@
 		flex-wrap: wrap;
 		// grid-column-gap: 3.5rem;
 		// grid-row-gap: 1.2rem;
-		grid-gap: 1.2rem 3.5rem;
+		// grid-gap: 1.2rem 3.5rem;
+		margin: 0 -3.5rem -1.2rem 0;
 		&:not(:first-child) {
 			margin-top: 2.5rem;
 		}
 		#{$self}__inner {
 			display: flex;
-			grid-gap: 0.8rem;
+			margin: 0 3.5rem 1.2rem 0;
+			&:last-child {
+				margin-right: 0;
+			}
+			// display: grid;
+			// grid-template-columns: 24px 1fr;
+			// grid-gap: 0.8rem;
 		}
 	}
 	&__roundbox {
 		#{$self}__inner {
 			display: flex;
 			align-items: center;
-			grid-gap: 0.8rem;
 			height: 5.2rem;
 			padding: 0 1.6rem;
 			border: 1px solid variables.$stroke;

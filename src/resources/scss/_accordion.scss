@@ -5,7 +5,9 @@
 .accordion {
 	$self: &;
 	&__trigger {
-		display: flex;
+		// display: flex;
+		display: grid;
+		grid-template-columns: 1fr 16px;
 		align-items: center;
 		justify-content: space-between;
 		grid-gap: 1.6rem;
