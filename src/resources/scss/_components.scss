@@ -305,6 +305,9 @@
 	display: flex;
 	align-items: center;
 	// grid-gap: 0.8rem;
+	&--right {
+		justify-content: flex-end;
+	}
 	&__text {
 		color: variables.$tertiary-color;
 		font-size: 1.4rem;
@@ -339,6 +342,127 @@
 				left: 0.2rem;
 				right: auto;
 			}
+		}
+	}
+}
+
+// tooltip
+.tooltip {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 2rem;
+	height: 2rem;
+	border-radius: 50%;
+	background-color: #CCCCD1;
+	color: #fff;
+	font-weight: normal;
+	font-weight: 800;
+	font-size: 1.3rem;
+}
+
+// empty
+.empty {
+	&__text {
+		color: variables.$tertiary-color;
+		font-weight: 600;
+		font-size: 1.6rem;
+		line-height: 2.4rem;
+		text-align: center;
+	}
+}
+
+.member {
+	$self: &;
+	&:not(:first-child) {
+		margin-top: 2.4rem;
+	}
+	&__header {
+		&:not(:last-child) {
+			margin-bottom: 2rem;
+		}
+	}
+	&__title {
+		font-weight: 600;
+		font-size: 1.6rem;
+		line-height: 2.6rem;
+	}
+	&__item {
+		&:not(:first-child) {
+			#{$self}__row {
+				position: relative;
+				padding-top: 1.2rem;
+				&:before {
+					content: '';
+					display: block;
+					position: absolute;
+					left: 4.4rem;
+					top: 0;
+					right: 0;
+					height: 0.1rem;
+					background-color: variables.$stroke;
+				}
+			}
+		}
+		&:not(:last-child) {
+			padding-bottom: 1.2rem;
+		}
+		#{$self}__row {
+			display: flex;
+			align-items: center;
+			// grid-gap: 1.2rem;
+		}
+		#{$self}__figure {
+			flex: none;
+			width: 3.2rem;
+			height: 3.2rem;
+			margin-right: 1.2rem;
+			border-radius: 50%;
+		}
+		#{$self}__right {
+			flex: 1;
+			#{$self}__group {
+				display: flex;
+				align-items: center;
+				// grid-gap: 0.8rem;
+				#{$self}__end {
+					margin-left: auto;
+
+					.button {
+						&__item {
+							height: 2.4rem;
+							padding: 0 0.8rem;
+							font-weight: 600;
+							font-size: 1.2rem;
+
+							.point {
+								margin-left: 0.4rem;
+								&__mark {
+									width: 1.2rem;
+									height: 1.2rem;
+									font-size: 0.8rem;
+								}
+								&__number {
+									font-size: 1.2rem;
+								}
+							}
+
+							.weight-black {
+								font-weight: 900;
+							}
+						}
+					}
+				}
+
+				> .flag {
+					margin-left: 0.8rem;
+				}
+			}
+		}
+		#{$self}__user {
+			font-weight: 600;
+			font-size: 1.4rem;
+			line-height: 2.4rem;
 		}
 	}
 }

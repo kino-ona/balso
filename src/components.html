@@ -29,8 +29,10 @@
 						</div>
 						<div class="form__field">
 							<div class="form__col">
-								<input type="text" id="text01" placeholder="Assistive text.">
-								<i class="form__ico form__ico--check" aria-label="hidden"></i>
+								<div class="form__box">
+									<input type="text" id="text01" placeholder="Assistive text.">
+									<button type="button" class="form__ico form__ico--delete" aria-label="모두 지우기"></button>
+								</div>
 								<p class="form__msg form__msg--check" role="alert">success message.</p>
 							</div>
 						</div>
@@ -41,8 +43,10 @@
 						</div>
 						<div class="form__field">
 							<div class="form__col">
-								<input type="text" id="text01" placeholder="Assistive text." aria-invalid="true" value="error">
-								<i class="form__ico form__ico--error" aria-label="hidden"></i>
+								<div class="form__box">
+									<input type="text" id="text01" placeholder="Assistive text." aria-invalid="true" value="error">
+									<i class="form__ico form__ico--error" aria-label="hidden"></i>
+								</div>
 								<p class="form__msg form__msg--error" role="alert">success message.</p>
 							</div>
 						</div>

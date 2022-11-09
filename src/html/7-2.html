@@ -1,0 +1,193 @@
+@@include('../inc/pagehead.inc', {
+	"pagetitle": "발로소득 - 친구 - 지원금 보내기",
+	"webroot": "../"
+})
+</head>
+<body class="floor floor--white">
+	<div id="wrap">
+		<header class="header" data-ui-fixed="top">
+			<div class="header__row">
+				<a href="#" class="header__back">
+					<span class="a11y">이전</span>
+				</a>
+				<h1 class="header__title">지원금 보내기</h1>
+			</div>
+		</header>
+		<div class="contents">
+			<div class="friend">
+				<div class="friend__box">
+					<div class="flexbox">
+						<p class="title">
+							친구에게 지원금을<br>
+							무료로 선물하세요!
+						</p>
+						<a href="#" class="tooltip">?</a>
+					</div>
+					<p class="desc desc--tertiary-color">보낸 지원금의 <span class="desc__weight-bold">최대 100%</span>까지 캐시백!</p>
+					<div class="friend__bluebox">
+						<div class="gift">
+							<div class="gift__row">
+								<div class="gift__left">
+									<p class="gift__remain">
+										<span class="gift__mark">P</span>
+										남은 지원금
+									</p>
+								</div>
+								<div class="gift__right">
+									<p class="gift__total">9,500,000 P</p>
+									<p class="gift__date">23. 01. 01 ~ 23. 01. 07​</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="friend__box">
+					<div class="toggle toggle--right">
+						<p class="toggle__text">안보낸 친구만</p>
+						<div class="toggle__button">
+							<input type="checkbox" id="toggle01" checked>
+							<label for="toggle01" class="a11y">안보낸 친구만</label>
+						</div>
+					</div>
+					<div class="friend__friend">
+						<div class="friend__search">
+							<div class="form">
+								<div class="form__set">
+									<div class="form__field">
+										<div class="form__col">
+											<div class="form__box">
+												<label for="searchName" class="a11y">이름 검색</label>
+												<input type="text" id="searchName" placeholder="이름 검색">
+												<button type="button" class="form__ico form__ico--delete" aria-label="모두 지우기"></button>
+												<i class="friend__ico" aria-hidden="true"></i>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="friend__result member">
+							<ul class="member__list">
+								<li class="member__item">
+									<div class="member__row">
+										<div class="member__figure">
+											<img src="../resources/images/dummy/@profile.png" alt="">
+										</div>
+										<div class="member__right">
+											<div class="member__group">
+												<p class="member__user">김발로씨</p>
+												<div class="member__end">
+													<div class="button">
+														<div class="button__row">
+															<button type="button" class="button__item" onclick="UI.popupOpen.init('get');">
+																최대
+																<span class="point">
+																	<span class="point__mark">C</span>
+																	<span class="point__number">0</span>
+																</span>
+															</button>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</li>
+								<li class="member__item">
+									<div class="member__row">
+										<div class="member__figure">
+											<img src="../resources/images/dummy/@profile.png" alt="">
+										</div>
+										<div class="member__right">
+											<div class="member__group">
+												<p class="member__user">김발로씨</p>
+												<div class="member__end">
+													<div class="button">
+														<div class="button__row">
+															<button type="button" class="button__item button__item--quinary" onclick="UI.popupOpen.init('get');"><span class="weight-black">6,000 P</span></button>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</li>
+								<li class="member__item">
+									<div class="member__row">
+										<div class="member__figure">
+											<img src="../resources/images/dummy/@profile.png" alt="">
+										</div>
+										<div class="member__right">
+											<div class="member__group">
+												<p class="member__user">김발로씨</p>
+												<div class="member__end">
+													<div class="button">
+														<div class="button__row">
+															<button type="button" class="button__item button__item--quaternary" disabled>대기중</button>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</li>
+								<li class="member__item">
+									<div class="member__row">
+										<div class="member__figure">
+											<img src="../resources/images/dummy/@profile.png" alt="">
+										</div>
+										<div class="member__right">
+											<div class="member__group">
+												<p class="member__user">김발로씨</p>
+												<div class="member__end">
+													<div class="button">
+														<div class="button__row">
+															<button type="button" class="button__item button__item--tertiary" disabled>수령완료</button>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+							<!-- 결과 없음 -->
+							<div class="empty">
+								<p class="empty__text">친구를 찾을 수 없어요 :(</p>
+							</div>
+							<!-- // 결과 없음 -->
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div id="modal-get" class="modal ly-alert" data-modal="up">
+    <div class="wrap">        
+			<div class="content modal__contents">
+				<div class="modal__ico modal__ico--point">
+					<i></i>
+				</div>
+				<p class="title">
+					<span class="point">
+						<span class="point__mark">C</span>
+						<span class="point__number">150 소득!</span>
+					</span>
+				</p>
+				<p class="desc desc--tertiary-color">
+					지원금 받은 사람이 많을 수록<br>
+					받는 소득도 많아져요!
+				</p>
+				<div class="button">
+					<div class="button__row">
+						<button type="button" class="button__item modal__close" onclick="UI.popupClose.init('get');">확인</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</body>
+
+</html>

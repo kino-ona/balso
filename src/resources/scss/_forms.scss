@@ -28,12 +28,18 @@
 	}
 	&__col {
 		flex: 1;
-		position: relative;
+		#{$self}__box {
+			position: relative;
+		}
 	}
 	&__ico {
 		position: absolute;
-		top: 0.3rem;
-		right: 0;
+		top: 50%;
+		right: 1.6rem;
+		margin-top: -8px;
+		&--delete {
+			@include sprite.retina-sprite(sprite.$ico-delete-group, sprite.$ico-delete-group-3x);
+		}
 		&--error {
 			@include sprite.retina-sprite(sprite.$ico-error-group, sprite.$ico-error-group-3x);
 		}
