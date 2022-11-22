@@ -32,7 +32,7 @@
 			transition:all .35s linear;
 			border-radius:2rem;
 			.content {
-					padding:3rem 2rem 2rem;
+					// padding:3rem 2rem 2rem;
 					text-align:center;
 					font-size:1.8rem;
 					.ly-tit {
@@ -127,14 +127,14 @@
 					opacity:0;
 					top:auto;bottom:0;left:0;width:100%;
 					border-radius:0;
-					border-top-left-radius:1.2rem;
-					border-top-right-radius:1.2rem;
+					border-top-left-radius:4rem;
+					border-top-right-radius:4rem;
 					transition-property:all;
 					transition-timing-function:ease;
 					transition-duration:.35s;
 					transform:translateY(100%);
 					.content {
-							padding:px(30) 2rem px(30);
+							// padding:px(30) 2rem px(30);
 							text-align:left;
 							.ly-tit {
 									font-size:2rem;
@@ -208,6 +208,11 @@
 		background-color: rgba(0,0,0,.6);
 	}
 	&.ly-btm {
+
+		.content {
+			padding: 3.2rem 2.4rem calc(constant(safe-area-inset-bottom) + 2rem);
+			padding: 3.2rem 2.4rem calc(env(safe-area-inset-bottom) + 2rem);
+		}
 
 		.title {
 			&:not(:last-child) {
