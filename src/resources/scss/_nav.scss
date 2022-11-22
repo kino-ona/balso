@@ -1,0 +1,63 @@
+@use 'mixins';
+@use 'variables';
+@use 'sprite/sprite';
+
+.nav {
+	$self: &;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	padding: 0 2.4rem calc(constant(safe-area-inset-bottom));
+	padding: 0 2.4rem calc(env(safe-area-inset-bottom));
+	border-radius: 3.6rem 3.6rem 0 0;
+	background-color: #000;
+	&__list {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		height: 7.2rem;
+	}
+	&__item {
+		opacity: 0.5;
+		&--actived {
+			opacity: 1;
+		}
+		&--home {
+			#{$self}__ico {
+				@include sprite.retina-sprite(sprite.$ico-nav-home-group, sprite.$ico-nav-home-group-3x);
+			}
+		}
+		&--challenge {
+			#{$self}__ico {
+				@include sprite.retina-sprite(sprite.$ico-nav-challenge-group, sprite.$ico-nav-challenge-group-3x);
+			}
+		}
+		&--benefit {
+			#{$self}__ico {
+				@include sprite.retina-sprite(sprite.$ico-nav-benefit-group, sprite.$ico-nav-benefit-group-3x);
+			}
+		}
+		&--buy {
+			#{$self}__ico {
+				@include sprite.retina-sprite(sprite.$ico-nav-buy-group, sprite.$ico-nav-buy-group-3x);
+			}
+		}
+		&--all {
+			#{$self}__ico {
+				@include sprite.retina-sprite(sprite.$ico-nav-all-group, sprite.$ico-nav-all-group-3x);
+			}
+		}
+	}
+	&__link {
+		display: flex;
+		flex-direction: column;
+	}
+	&__text {
+		margin-top: 0.4rem;
+		color: #fff;
+		font-size: 1rem;
+		line-height: 1.8rem;
+		text-align: center;
+	}
+}

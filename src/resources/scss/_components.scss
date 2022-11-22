@@ -372,6 +372,7 @@
 	}
 }
 
+// member
 .member {
 	$self: &;
 	&:not(:first-child) {
@@ -464,5 +465,17 @@
 			font-size: 1.4rem;
 			line-height: 2.4rem;
 		}
+	}
+}
+
+// link
+.link {
+	display: inline-flex;
+	color: variables.$tertiary-color;
+	font-size: 1.4rem;
+	line-height: 2.2rem;
+	text-decoration: underline;
+	&:not(:first-child) {
+		margin-top: 0.8rem;
 	}
 }

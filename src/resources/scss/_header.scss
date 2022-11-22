@@ -14,6 +14,42 @@
 	padding: 0 calc(constant(safe-area-inset-right) + 2.4rem) 0 calc(constant(safe-area-inset-left) + 2.4rem);
 	padding: 0 calc(env(safe-area-inset-right) + 2.4rem) 0 calc(env(safe-area-inset-left) + 2.4rem);
 	background-color: variables.$quaternary-color;
+	&--main {
+		#{$self}__row {
+			justify-content: space-between;
+		}
+		#{$self}__title {
+			font-weight: 700;
+			font-size: 2.2rem;
+			line-height: 3.2rem;
+		}
+		#{$self}__right {
+			display: flex;
+			position: static;
+		}
+		#{$self}__util {
+			position: relative;
+			&:not(:first-child) {
+				margin-left: 1.6rem;
+			}
+			&--notify {
+				@include sprite.retina-sprite(sprite.$ico-header-notify-group, sprite.$ico-header-notify-group-3x);
+			}
+			&--friend {
+				@include sprite.retina-sprite(sprite.$ico-header-friend-group, sprite.$ico-header-friend-group-3x);
+			}
+
+			.new {
+				position: absolute;
+				right: 4px;
+				top: 3px;
+				width: 8px;
+				height: 8px;
+				border-radius: 50%;
+				background-color: #FF543E;
+			}
+		}
+	}
 	&__row {
 		display: flex;
 		align-items: center;

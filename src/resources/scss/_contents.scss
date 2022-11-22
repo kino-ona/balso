@@ -39,12 +39,14 @@
 		}
 	}
 	&__rounded {
+		margin-top: 4rem;
 		padding: 4rem calc(constant(safe-area-inset-right) + 2.4rem) calc(constant(safe-area-inset-bottom) + 4rem) calc(constant(safe-area-inset-left) + 2.4rem);
 		padding: 4rem calc(env(safe-area-inset-right) + 2.4rem) calc(env(safe-area-inset-bottom) + 4rem) calc(env(safe-area-inset-left) + 2.4rem);
 		border-radius: 3.6rem 3.6rem 0 0;
 		background-color: #fff;
-		&:not(:first-child) {
-			margin-top: 4rem;
+		&--sticky {
+			padding-bottom: calc(constant(safe-area-inset-bottom) + 11.2rem);
+			padding-bottom: calc(env(safe-area-inset-bottom) + 11.2rem);
 		}
 
 		.title {

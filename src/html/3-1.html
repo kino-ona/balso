@@ -1,0 +1,179 @@
+@@include('../inc/pagehead.inc', {
+	"pagetitle": "발로소득 - 혜택",
+	"webroot": "../"
+})
+</head>
+<body class="floor">
+	<div id="wrap">
+		<header class="header header--main" data-ui-fixed="top">
+			<div class="header__row">
+				<h1 class="header__title">보너스 봉투</h1>
+				<div class="header__right">
+					<a href="#" class="header__util header__util--notify">
+						<span class="new">
+							<span class="a11y">확인하지 않은 알림 있음</span>
+						</span>
+						<span class="a11y">알림</span>
+					</a>
+					<a href="#" class="header__util header__util--friend">
+						<span class="a11y">친구</span>
+					</a>
+				</div>
+			</div>
+		</header>
+		<div class="contents">
+			<div class="contents__separate">
+				<div class="contents__card">
+					<div class="benefit">
+						<div class="benefit__pack">
+							<div class="benefit__ico">
+								<i>
+									<span class="new">
+										<span class="a11y">열지 않은 봉투</span>
+										6
+									</span>
+								</i>
+							</div>
+							<p class="title">꽝 없는 100%당첨</p>
+							<p class="desc">
+								<span>최대</span>
+								<span class="desc__weight-bold">100만</span>
+								<span class="point">
+									<span class="point__mark">C</span>
+								</span>
+								<span>를 받아보세요!</span>
+							</p>
+							<div class="button">
+								<div class="button__row">
+									<button type="button" class="button__item" onclick="UI.popupOpen.init('win');">봉투 열기</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="benefit">
+				<div class="benefit__user">
+					<img src="../resources/images/dummy/@profile.png" alt="" class="benefit__img">
+					<p class="desc desc--secondary"><span class="desc__weight-semibold">suriqooo</span> 님이 10만 C에 당첨되었습니다.</p>
+				</div>
+			</div>
+			<div class="contents__rounded contents__rounded--sticky">
+				<div class="benefit">
+					<div class="benefit__benefit">
+						<p class="title">
+							당첨 가능 수량은<br>
+							매주 새롭게 추가돼요!
+						</p>
+						<ul class="benefit__list">
+							<li class="benefit__item">
+								<div class="benefit__img">
+									<img src="../resources/images/dummy/@benefit.png" alt="스타벅스 아메리카노 T">
+								</div>
+								<p class="benefit__text">스타벅스 아메리카노 T</p>
+								<span class="flag flag--secondary">1000개 남음</span>
+							</li>
+							<li class="benefit__item">
+								<div class="benefit__img">
+									<img src="../resources/images/dummy/@benefit.png" alt="스타벅스 아메리카노 T">
+								</div>
+								<p class="benefit__text">스타벅스 아메리카노 T</p>
+								<span class="flag flag--secondary">1000개 남음</span>
+							</li>
+							<li class="benefit__item">
+								<div class="benefit__img">
+									<img src="../resources/images/dummy/@benefit.png" alt="스타벅스 아메리카노 T">
+								</div>
+								<p class="benefit__text">스타벅스 아메리카노 T</p>
+								<span class="flag flag--secondary">1000개 남음</span>
+							</li>
+							<li class="benefit__item">
+								<div class="benefit__img">
+									<img src="../resources/images/dummy/@benefit.png" alt="스타벅스 아메리카노 T">
+								</div>
+								<p class="benefit__text">스타벅스 아메리카노 T</p>
+								<span class="flag flag--secondary">1000개 남음</span>
+							</li>
+							<li class="benefit__item">
+								<div class="benefit__img">
+									<img src="../resources/images/dummy/@benefit.png" alt="스타벅스 아메리카노 T">
+								</div>
+								<p class="benefit__text">스타벅스 아메리카노 T</p>
+								<span class="flag flag--secondary">1000개 남음</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+		<nav class="nav">
+			<ul class="nav__list">
+				<li class="nav__item nav__item--home">
+					<a href="#" class="nav__link">
+						<i class="nav__ico" aria-hidden="true"></i>
+						<p class="nav__text">홈</p>
+					</a>
+				</li>
+				<li class="nav__item nav__item--challenge">
+					<a href="#" class="nav__link">
+						<i class="nav__ico" aria-hidden="true"></i>
+						<p class="nav__text">챌린지</p>
+					</a>
+				</li>
+				<li class="nav__item nav__item--benefit nav__item--actived">
+					<a href="#" class="nav__link">
+						<i class="nav__ico" aria-hidden="true"></i>
+						<p class="nav__text">혜택</p>
+					</a>
+				</li>
+				<li class="nav__item nav__item--buy">
+					<a href="#" class="nav__link">
+						<i class="nav__ico" aria-hidden="true"></i>
+						<p class="nav__text">구매</p>
+					</a>
+				</li>
+				<li class="nav__item nav__item--all">
+					<a href="#" class="nav__link">
+						<i class="nav__ico" aria-hidden="true"></i>
+						<p class="nav__text">전체</p>
+					</a>
+				</li>
+			</ul>
+		</nav>
+	</div>
+
+	<div id="modal-win" class="modal ly-alert" data-modal="up">
+    <div class="wrap">        
+			<div class="content modal__contents">
+				<div class="modal__ico modal__ico--point">
+					<i></i>
+				</div>
+				<p class="title">
+					<span class="point">
+						<span class="point__mark">C</span>
+						<span class="point__number">20 당첨!</span>
+					</span>
+					보너스 봉투를 더 열어보세요
+				</p>
+				<div class="button">
+					<div class="button__row">
+						<button type="button" class="button__item modal__close" onclick="UI.popupClose.init('win');">봉투 열기</button>
+					</div>
+					<div class="button__row">
+						<button type="button" class="button__item button__item--quaternary modal__close" onclick="UI.popupClose.init('win');">당첨 포기</button>
+					</div>
+				</div>
+				<div class="modal__bottom">
+					<p class="desc desc--secondary desc--secondary-color">
+						보너스 봉투 개봉시
+						<span class="point">
+							<span class="point__mark">C</span>
+						</span>
+						차감
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -28,16 +28,16 @@
 									<dl class="between-item__list">
 										<div class="between-item__group">
 											<dt class="between-item__dt">최대소득</dt>
-											<dt class="between-item__dd">
+											<dd class="between-item__dd">
 												<div class="point">
 													<span class="point__mark">C</span>
 													<span class="point__number">5,000</span>
 												</div>
-											</dt>
+											</dd>
 										</div>
 										<div class="between-item__group">
 											<dt class="between-item__dt">인센티브</dt>
-											<dt class="between-item__dd">스타벅스 99% 할인쿠폰</dt>
+											<dd class="between-item__dd">스타벅스 99% 할인쿠폰</dd>
 										</div>
 									</dl>
 								</div>
@@ -45,7 +45,9 @@
 						</div>
 						<div class="button">
 							<div class="button__row">
-								<button type="button" class="button__item button__item--quinary">바로 인증하기</button>
+								<!-- 221117 수정 -->
+								<button type="button" class="button__item button__item--quinary" onclick="UI.popupOpen.init('guide');">바로 인증하기</button>
+								<!-- // 221117 수정 -->
 							</div>
 							<!-- 업로드 할 인증 미션이 모두 달성되었을 경우​ -->
 							<div class="button__row">
@@ -254,5 +256,42 @@
 			</div>
 		</div>
 	</div>
+
+	<!-- 221117 추가 -->
+	<div id="modal-guide" class="modal ly-btm ndim" data-modal>
+    <div class="wrap">        
+			<div class="content modal__contents">
+				<p class="title title--secondary">이렇게 인증해주세요</p>
+				<div class="guide">
+					<div class="guide__row">
+						<div class="guide__box">
+							<div class="guide__img">
+								<img src="../resources/images/img_guide_cut01.png" alt="">
+							</div>
+							<p class="guide__text">
+								사진에 대한 설명 최대<br>
+								2줄까지 입력
+							</p>
+						</div>
+						<div class="guide__box">
+							<div class="guide__img">
+								<img src="../resources/images/img_guide_cut02.png" alt="">
+							</div>
+							<p class="guide__text">
+								사진에 대한 설명 최대<br>
+								2줄까지 입력
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="button">
+					<div class="button__row">
+						<button type="button" class="button__item modal__close" onclick="UI.popupClose.init('guide');">확인했어요</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- // 221117 추가 -->
 </body>
 </html>

@@ -26,13 +26,20 @@
 						</div>
 						<div class="agree-challenge__board">
 							<div class="agree-challenge__edit">
-								<button type="button" onclick="UI.popupOpen.init('edit');"">수정</button>
+								<button type="button" onclick="UI.popupOpen.init('edit');">수정</button>
 							</div>
-							<pre>
+							<!-- 112217 수정 -->
+							<!-- <pre>
 1. 아침밥 먹기
 2. 운동하기
 3. 돈 아껴쓰기
-							</pre>
+							</pre> -->
+							<label for="authText" class="a11y">인증 내용</label>
+							<textarea id="authText" readonly>
+1. 아침밥 먹기
+2. 운동하기
+3. 돈 아껴쓰기</textarea>
+							<!-- // 112217 수정 -->
 						</div>
 						<div class="button">
 							<div class="button__row">
@@ -75,7 +82,9 @@
 				</p>
 				<div class="button">
 					<div class="button__row">
-						<button type="button" class="button__item modal__close" onclick="UI.popupClose.init('edit');">수정</button>
+						<!-- 221117 수정 -->
+						<button type="button" class="button__item modal__close" onclick="UI.popupClose.init('edit'); edit();">수정</button>
+						<!-- // 221117 수정 -->
 					</div>
 					<div class="button__row">
 						<button type="button" class="button__item button__item--quaternary modal__close" onclick="UI.popupClose.init('edit');">유지</button>
@@ -85,4 +94,15 @@
 		</div>
 	</div>
 </body>
+
+<!-- 221117 추가 -->
+<script>
+	const target = document.getElementById('authText');
+
+	function edit() {
+		target.removeAttribute('readonly');
+		target.focus();
+	};
+</script>
+<!-- // 221117 추가 -->
 </html>

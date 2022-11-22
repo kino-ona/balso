@@ -14,6 +14,7 @@
 @use 'swiper';
 @use 'layout';
 @use 'header';
+@use 'nav';
 @use 'contents';
 
 // special challenge
@@ -169,6 +170,7 @@
 .challenge {
 	$self: &;
 	&__box {
+		position: relative;
 		padding: 2.4rem calc(constant(safe-area-inset-right) + 2.4rem) 4rem calc(constant(safe-area-inset-left) + 2.4rem);
 		padding: 2.4rem calc(env(safe-area-inset-right) + 2.4rem) 4rem calc(env(safe-area-inset-left) + 2.4rem);
 		background-color: #fff;
@@ -296,12 +298,20 @@
 				@include sprite.retina-sprite(sprite.$ico-refresh-group, sprite.$ico-refresh-group-3x);
 			}
 			&__board {
+				// display: flex;
+				// align-items: center;
+				position: relative;
 				margin-top: 1.2rem;
-				padding: 2rem 2rem 5.6rem;
+				// height: 18rem;
+				// padding: 2rem 2rem 5.6rem;
+				padding: 5.6rem 2rem;
 				border: 0.1rem solid variables.$stroke;
 				border-radius: 2rem;
 				background-color: variables.$quaternary-color;
 				#{$agree-challenge}__edit {
+					position: absolute;
+					right: 2rem;
+					top: 2rem;
 					color: variables.$primary-color;
 					font-size: 1.4rem;
 					text-align: right;
@@ -313,6 +323,16 @@
 					font-size: 1.6rem;
 					line-height: 2.4rem;
 					white-space: pre-line;
+				}
+				
+				textarea {
+					width: 100%;
+					min-height: 6.7rem;
+					background-color: transparent;
+					color: variables.$tertiary-color;
+					font-size: 1.6rem;
+					line-height: 2.4rem;
+					resize: none;
 				}
 			}
 
@@ -491,6 +511,26 @@
 		padding: 2rem;
 		border-radius: 2rem;
 		background-color: variables.$quaternary-color;
+	}
+	&__end {
+		position: absolute;
+		left: 0;
+		top: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(255,255,255,.8);
+
+		p {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 100%;
+			color: variables.$tertiary-color;
+			font-weight: 600;
+			font-size: 1.6rem;
+			line-height: 2.4rem;
+			text-align: center;
+		}
 	}
 
 	.time {
@@ -926,6 +966,126 @@
 			#{$process}__item {
 				padding-bottom: 2.4rem;
 			}
+		}
+	}
+}
+
+// benefit
+.benefit {
+	$self: &;
+	&__pack {
+		text-align: center;
+		#{$self}__ico {
+			display: flex;
+			justify-content: center;
+			position: relative;
+
+			i {
+				position: relative;
+				@include sprite.retina-sprite(sprite.$ico-pack-group, sprite.$ico-pack-group-3x);
+
+				.new {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					position: absolute;
+					top: 16px;
+					right: 48px;
+					width: 24px;
+					height: 24px;
+					border-radius: 50%;
+					background-color: #FC5239;
+					color: #fff;
+					font-weight: 700;
+					font-size: 14px;
+				}
+			}
+		}
+
+		.title {
+			line-height: 2.8rem;
+			&:not(:first-child) {
+				margin-top: 1.2rem;
+			}
+		}
+
+		.desc {
+			&:not(:first-child) {
+				margin-top: 0.8rem;
+			}
+			
+			> span {
+				vertical-align: middle;
+			}
+		}
+	}
+	&__user {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin-bottom: -4rem;
+		padding: 2rem 0;
+		#{$self}__img {
+			width: 2.8rem;
+			height: 2.8rem;
+			margin-right: 0.8rem;
+		}
+	}
+	&__benefit {
+
+		.title {
+			font-size: 2rem;
+			line-height: 2.8rem;
+		}
+	}
+	&__item {
+		display: flex;
+		align-items: center;
+		position: relative;
+		min-height: 9rem;
+		&:not(:last-child) {
+			&:before {
+				content: '';
+				display: block;
+				position: absolute;
+				left: 8.2rem;
+				right: 0;
+				bottom: 0;
+				height: 0.1rem;
+				background-color: variables.$stroke;
+			}
+		}
+		#{$self}__img {
+			flex: none;
+			width: 6.4rem;
+			height: 6.4rem;
+			margin-right: 1.2rem;
+			
+			img {
+				width: 100%;
+				height: 100%;
+			}
+		}
+		#{$self}__text {
+			flex: 1;
+			font-weight: 600;
+			font-size: 1.6rem;
+			line-height: 2.4rem;
+		}
+
+		.flag {
+			flex: none;
+		}
+	}
+
+	.button {
+		&:not(:first-child) {
+			margin-top: 2.4rem;
+		}
+		&__item {
+			height: 5.2rem;
+			border-radius: 1.2rem;
+			font-weight: 600;
 		}
 	}
 }
